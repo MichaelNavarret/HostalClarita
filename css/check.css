@@ -1,0 +1,173 @@
+/*DESARROLLADO POR MICHAEL NAVARRETE */
+
+*{
+    text-decoration: none;
+}
+h1{
+    text-align: left;
+    margin-left: 15px;
+    font-style: italic;
+}
+
+#imagenPerfil{
+    border: 1px dashed black;
+    width: 20%;
+    float: left;
+    margin: 10px;
+    min-height: 140px;
+    text-align: center;
+    line-height: 140px;
+    box-shadow: 5px 5px rgba(162, 162, 162, 0.5);
+    
+}
+#datos{
+    border: 1px solid black;
+    width: 70%;
+    margin: 10px;
+    min-height: 140px;
+    float: left;
+}
+
+#datos .campo{
+    margin: 20px;
+    border-bottom:1px solid black ;
+}
+
+#container{
+    width: 100%;
+}
+
+#tarjetaUsuario{
+    width: 65%;
+    border: 1px solid black;
+    float: left;
+    min-height: 150px;
+
+}
+
+.clearFix{
+    float: none;
+    clear: both;
+}
+
+#logo{
+    margin-left: 20px;
+    width: 15%;
+    float: left;
+    min-height: 150px;
+    text-align: right;
+    
+}
+/**/
+#logoImage{
+    width: 150px;
+    height: 150px;
+}
+#textoLogo{
+    color: #513c2d;
+    margin-left: 5px;
+    width: 15%;
+    float: left;
+    min-height: 150px;
+    padding-top: 20px;
+}
+#textoLogo #first{
+    display: block;
+    width: 50%;
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#textoLogo #second{
+    display: block;
+    margin-top: 0px;
+}
+#menu{
+    margin-top: 10px;
+    min-height: 40px;
+    background-color: #2d4551;
+    width: 100%;
+    text-decoration: none;
+}
+#menu ul{
+    padding: 0px;
+}
+#menu ul li {
+    display: block;
+    float: left;
+    padding: 10px;
+    font-size: large;
+    border-right: 1px solid white;
+}
+
+#menu ul li:hover{
+    background-color: white;
+}
+
+#menu ul li:hover a{
+    color: black;
+}
+
+#menu ul li a{
+    color: white;
+}
+
+#buscador{
+    border: 1px solid black;
+    width: 68%;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    padding: 50px;
+}
+
+#showReserva{
+    display: none;
+    width: 70%;
+    margin: auto;
+    margin-top: 0.5%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#botonBuscar{
+    margin-top: .5%;
+    color:white;
+    border-radius: 15px;
+    border-color: #6E998A;
+    background-color: #2d4551;
+    min-height: 35px;
+    box-shadow: 5px 5px rgba(162, 162, 162, 0.5);
+}
+
+#botonBuscar:hover{
+    background-color: #6E998A;
+    color: white;
+    cursor: pointer;
+}
+#rutBlock{
+    width: 250px;
+
+}
+.datosReserva{
+    margin: .5%;
+    margin: auto;
+    padding: .5%;
+    width: 40%;
+}
+
+.botonCheck{
+    background-color: rgb(135, 177, 135);
+    margin-bottom: .7%;
+    border: 1px dashed black;
+    box-shadow: 3px 3px rgb(189, 189, 189);
+}
+
+#succesCheck{
+    width: 70%;
+    margin: auto;
+    margin-top: .5%;
+    display: none;
+}

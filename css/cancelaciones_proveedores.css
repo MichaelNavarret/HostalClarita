@@ -1,0 +1,255 @@
+/*DESARROLLADO POR MICHAEL NAVARRETE */
+
+*{
+    text-decoration: none;
+}
+h1{
+    text-align: left;
+    margin-left: 15px;
+    font-style: italic;
+}
+
+#imagenPerfil{
+    border: 1px dashed black;
+    width: 20%;
+    float: left;
+    margin: 10px;
+    min-height: 140px;
+    text-align: center;
+    line-height: 140px;
+    box-shadow: 5px 5px rgba(162, 162, 162, 0.5);
+    
+}
+#datos{
+    border: 1px solid black;
+    width: 70%;
+    margin: 10px;
+    min-height: 140px;
+    float: left;
+}
+
+#datos .campo{
+    margin: 20px;
+    border-bottom:1px solid black ;
+}
+
+#container{
+    width: 100%;
+}
+
+#tarjetaUsuario{
+    width: 65%;
+    border: 1px solid black;
+    float: left;
+    min-height: 150px;
+
+}
+
+.clearFix{
+    float: none;
+    clear: both;
+}
+
+#logo{
+    margin-left: 20px;
+    width: 15%;
+    float: left;
+    min-height: 150px;
+    text-align: right;
+    
+}
+/**/
+#logoImage{
+    width: 150px;
+    height: 150px;
+}
+#textoLogo{
+    color: #513c2d;
+    margin-left: 5px;
+    width: 15%;
+    float: left;
+    min-height: 150px;
+    padding-top: 20px;
+}
+#textoLogo #first{
+    display: block;
+    width: 50%;
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#textoLogo #second{
+    display: block;
+    margin-top: 0px;
+}
+#menu{
+    margin-top: 10px;
+    min-height: 40px;
+    background-color: #2d4551;
+    width: 100%;
+    text-decoration: none;
+}
+#menu ul{
+    padding: 0px;
+}
+#menu ul li {
+    display: block;
+    float: left;
+    padding: 10px;
+    font-size: large;
+    border-right: 1px solid white;
+}
+
+#menu ul li:hover{
+    background-color: white;
+}
+
+#menu ul li:hover a{
+    color: black;
+}
+
+#menu ul li a{
+    color: white;
+}
+
+
+#cancelaciones{
+    border: 2px dashed black;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 30px;
+    box-shadow: 5px 5px rgb(218, 215, 215);
+}
+#cancelaciones h2{
+    width: 255px;
+    margin:auto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+#cancelaciones #tabla{
+    margin: auto;
+}
+#cancelaciones #tabla #cabecera{
+    background-color: #eee;
+    
+}
+#cancelaciones #tabla tr td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.main{
+    width: 50%;
+    border: 1px solid black;
+    text-align: left;
+    float: left;
+    margin: .5%;
+}
+
+#ordenCompra{
+    width: 45%;
+    display: none;
+}
+
+
+#tableContainer{
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 1%;
+    float: left;
+}
+#tableContainer h2{
+    width: 50%;
+    margin: auto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+#tableContainer #tabla{
+    width: 100%;
+    margin-left: 2%;
+}
+#tableContainer #tabla #cabecera{
+    background-color: #eee;
+    
+}
+#tableContainer #tabla tr td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.btns{
+    width: 45%;
+    float: left;
+    margin-top: 20%;
+    margin-left: 3%;
+}
+
+#btn1{
+    margin-top: 10%;
+    margin-bottom: 4%;
+    border-radius: 15px;
+    background-color:rgb(248, 229, 195);
+}
+#btn2{
+    border-radius: 15px;
+    background-color:rgb(150, 248, 207);
+}
+
+.main{
+    text-align: center;
+    padding: 1%;
+}
+
+#file{
+    width: 50%;
+    margin: auto;
+    margin-top: 3%;
+    background-color: #eee;
+}
+
+#btnSubir{
+    margin-top: 3%;
+    width: 10%;
+    background-color: rgb(123, 213, 123);
+    color: white;
+}
+
+/*Portal de recepcion de pedidos*/
+#recepContainer{
+    border: 1px dashed black;
+    margin: auto;
+    width: 1500px;
+    padding: 20px;
+}
+
+#recepContainer h2{
+    text-align: center;
+}
+
+
+.campo{
+    margin-top: 15px;
+}
+
+#btnEnviar{
+    background-color: rgb(102, 194, 163);
+    color: white;
+    border-radius: 10px;
+    width: 5%;
+}
+
+#btnEnviar:hover{
+    background-color: black;
+    color: white;
+}

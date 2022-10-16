@@ -1,0 +1,110 @@
+<!--DESARROLLADO POR MICHAEL NAVARRETE-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="img/WhatsApp Image 2022-09-21 at 3.07.35 PM.jpeg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Operador - Hostal Doña Clarita</title>
+    
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/check.css">
+    
+    
+</head>
+<body>
+    <div id ="container">
+        <h1>Check in / Check Out</h1> 
+        <div id ="tarjetaUsuario">
+            <div id="imagenPerfil">
+                Imagen de Perfil
+            </div>
+            <div id="datos">
+                <div class ="campo">
+                    <label for=""><strong>Nombre Operador:</strong></label>
+                    <label for="">Nombre</label>
+                </div>
+                <div class ="campo">
+                    <label for=""><strong>Edad:</strong> </label>
+                    <label for="">XX años </label>
+                </div>
+                <div class ="campo">
+                    <label for=""><strong>Email:</strong></label>
+                    <label for="">email@gmail.com </label>
+                </div>
+            </div>
+        </div>
+        <div id ="logo">
+            <img id ="logoImage" src="../../img/WhatsApp Image 2022-09-21 at 3.07.35 PM.jpeg" alt="logo">
+        </div>
+        <div id ="textoLogo">
+            <h2 id ="first">Hostal</h2>
+            <h2 id ="second">Doña Clarita</h2>
+        </div>
+
+        <div class="clearFix"></div>
+
+        <nav id="menu" >
+            <ul >
+                <li><a class="text-decoration-none" href="portalOperador.html">Inicio</a> </li>
+                <li id="hab"><a class="text-decoration-none" href="habitaciones.html">Habitaciones</a></li>
+                <li><a class="text-decoration-none" href="check.html">Check</a></li>
+                <li><a class="text-decoration-none" href="cancelaciones.html">Cancelaciones</a></li>
+                <li><a class="text-decoration-none" href="proveedores.html">Proveedores</a></li>
+                <li><a class="text-decoration-none" href="informes.html">Informes</a></li>
+                <li><a class="text-decoration-none" href="#">Salir</a> </li>
+            </ul>
+        </nav>
+
+        <div id = "buscador">
+            <div id ="rut">
+                <input id ="rutBlock" type="text" name ="rut" placeholder="Ingrese código reserva">
+            </div>
+            <button type ="submit" id ="botonBuscar" onclick="checkReserva()">Buscar reserva</button>
+        </div>
+
+        <div id ="showReserva">
+            <div class="datosReserva">
+                <label for=""><strong>ID Reserva:</strong></label>
+                <label for="">placeholder</label>
+            </div>
+            <div class="datosReserva">
+                <label for=""><strong>Cliente:</strong></label>
+                <label for="">placeholder</label>
+            </div>
+            <div class="datosReserva">
+                <label for=""><strong>Fecha Reserva:</strong></label>
+                <label for="">placeholder</label>
+            </div>
+            <div class="datosReserva">
+                <label for=""><strong>Fecha Inicio:</strong></label>
+                <label for="">placeholder</label>
+            </div>
+            <div class="datosReserva">
+                <label for=""><strong>Fecha Termino:</strong></label>
+                <label for="">placeholder</label>
+            </div>
+            <div class="datosReserva">
+                <label for=""><strong>Tipo Pago:</strong></label>
+                <label for="">placeholder</label>
+            </div>
+
+            <button type ="button" class=" botonCheck btn btn-success" onclick="checkIn() ">Check In</button>
+            <button type ="button" class=" botonCheck btn btn-danger"  onclick="checkOut()">Check Out</button>
+
+        </div>
+
+        <div id ="succesCheck" class="alert alert-success alert-dismissible fade show" role="alert">
+            <p id ="check"></p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+
+        <script src="../../js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="../../js/jquery-3.6.1.min.js"></script>
+        <script src="../../js/scripts.js"></script>
+    </div>
+</body>
+</html>

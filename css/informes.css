@@ -1,0 +1,156 @@
+/*DESARROLLADO POR MICHAEL NAVARRETE */
+
+*{
+    text-decoration: none;
+}
+h1{
+    text-align: left;
+    margin-left: 15px;
+    font-style: italic;
+}
+
+#imagenPerfil{
+    border: 1px dashed black;
+    width: 20%;
+    float: left;
+    margin: 10px;
+    min-height: 140px;
+    text-align: center;
+    line-height: 140px;
+    box-shadow: 5px 5px rgba(162, 162, 162, 0.5);
+    
+}
+#datos{
+    border: 1px solid black;
+    width: 70%;
+    margin: 10px;
+    min-height: 140px;
+    float: left;
+}
+
+#datos .campo{
+    margin: 20px;
+    border-bottom:1px solid black ;
+}
+
+#container{
+    width: 100%;
+}
+
+#tarjetaUsuario{
+    width: 65%;
+    border: 1px solid black;
+    float: left;
+    min-height: 150px;
+
+}
+
+.clearFix{
+    float: none;
+    clear: both;
+}
+
+#logo{
+    margin-left: 20px;
+    width: 15%;
+    float: left;
+    min-height: 150px;
+    text-align: right;
+    
+}
+/**/
+#logoImage{
+    width: 150px;
+    height: 150px;
+}
+#textoLogo{
+    color: #513c2d;
+    margin-left: 5px;
+    width: 15%;
+    float: left;
+    min-height: 150px;
+    padding-top: 20px;
+}
+#textoLogo #first{
+    display: block;
+    width: 50%;
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#textoLogo #second{
+    display: block;
+    margin-top: 0px;
+}
+#menu{
+    margin-top: 10px;
+    min-height: 40px;
+    background-color: #2d4551;
+    width: 100%;
+    text-decoration: none;
+}
+#menu ul{
+    padding: 0px;
+}
+#menu ul li {
+    display: block;
+    float: left;
+    padding: 10px;
+    font-size: large;
+    border-right: 1px solid white;
+}
+
+#menu ul li:hover{
+    background-color: white;
+}
+
+#menu ul li:hover a{
+    color: black;
+}
+
+#menu ul li a{
+    color: white;
+}
+
+#contentInfo{
+    padding-top: 1%;
+    width: 70%;
+    height: 300px;
+    margin:auto;
+    border: 1px solid black;
+    display: block;
+    text-align: center;
+}
+
+#contentInfo #downloadInfo h3{
+    float: left;
+    margin: .5%;
+    margin-left: 25%;
+}
+
+#contentInfo #downloadInfo #selector{
+    float: left;
+    border: 1px solid black;
+    margin: 1%;
+}
+
+.clearFix{
+    float: none;
+    clear: both;
+}
+
+#btnDownload{
+    margin-bottom: .5%;
+    border-radius: 10px;
+    width: 10%;
+    background-color: rgb(195, 227, 239);
+}
+
+#contentInfo .alert{
+    width: 70%;
+    margin: auto;
+    margin-top: .5%;
+    display: none;
+}

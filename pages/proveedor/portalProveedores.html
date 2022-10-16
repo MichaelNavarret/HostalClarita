@@ -1,0 +1,86 @@
+<!--DESARROLLADO POR MICHAEL NAVARRETE-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Proveedores - Hostal Doña Clarita</title>
+
+    <link rel="icon" href="img/WhatsApp Image 2022-09-21 at 3.07.35 PM.jpeg">
+    <link rel="stylesheet" type = "text/css" href="../../css/proveedores.css">
+    <script src="../../js/scripts.js"></script>
+</head>
+<body>
+    
+    <div id ="container">
+        <h1>Portal Proveedores</h1> 
+        <div id ="tarjetaUsuario">
+            <div id="imagenPerfil">
+                Imagen de Perfil
+            </div>
+            <div id="datos">
+                <div class ="campo">
+                    <label for=""><strong>Proveedor:</strong></label>
+                    <label for="">Proveedor</label>
+                </div>
+                <div class ="campo">
+                    <label for=""><strong>Rubro:</strong> </label>
+                    <label for="">Rubro </label>
+                </div>
+                <div class ="campo">
+                    <label for=""><strong>Email:</strong></label>
+                    <label for="">email@gmail.com </label>
+                </div>
+            </div>
+        </div>
+        <div id ="logo">
+            <img id ="logoImage" src="../../img/WhatsApp Image 2022-09-21 at 3.07.35 PM.jpeg" alt="logo">
+        </div>
+        <div id ="textoLogo">
+            <h2 id ="first">Hostal</h2>
+            <h2 id ="second">Doña Clarita</h2>
+        </div>
+
+        <div class="clearFix"></div>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="portalProveedores.html">Inicio</a> </li>
+                <li><a href="#">Salir</a> </li>
+            </ul>
+        </nav>
+
+        <div id = "buscador">
+            <div id ="rut">
+                <input id ="rutBlock" type="text" name ="rut" placeholder="Ingrese su rut">
+            </div>
+            <button type ="submit" id ="botonBuscar" onclick="verificarRut()">Buscar Orden de compra asociada</button>
+        </div>
+
+        <div id ="showTable">
+            <h2 id ="pedidos"></h2>
+            <table id="tabla">
+                <tr id = "cabecera">
+                    <td><strong>Numero</strong></td>
+                    <td><strong>Fecha</strong></td>
+                    <td><strong>Estado</strong></td>
+                </tr>
+                <tr>
+                    <td><a href="infoPedido.html">Empty</a></td>
+                    <td>Empty/empty/empty</td>
+                    <td>Empty</td>
+                </tr>
+                <tr>
+                    <td><a href="infoPedido.html">Empty</a></td>
+                    <td>Empty/empty/empty</td>
+                    <td>Empty</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>
