@@ -4,30 +4,28 @@
 function verificarRut(){
     var text = document.getElementById('rutBlock').value;
     var largo = text.length;
-    var filtro = ' -.';
+    var filtro = ' -.abcdefghijlmnopqrstuvwxyz!"#$%&/()=?¡¿°|,;.:-_{[}]<>+' + "'";
     var test = 0;
 
-    for (var i = 0; i < largo; i++){
-        for (var j = 0; j < filtro.length; j++){
-            if (text.charAt(i) == filtro.charAt(j)){
+    for (var i = 0; i < largo; i++){ //Ciclo que recorre el rut.
+        for (var j = 0; j < filtro.length; j++){ //Ciclo que recorre el filtro.
+            if (text.charAt(i) == filtro.charAt(j)){ //Compara cada caracter del rut para analizar que no se encuentren signos especiales mostrados en el filtro.
                 test = 1;
             }
         }
     }
 
-
     if (text == ""){ //Revisa que el rut no sea ingresado vacio.
         alert("Por favor digite su rut.")
     } else if (largo < 10){ //Revisa que el rut cumpla con el minimo de caracteres.
         alert("Por favor ingrese un rut válido.") 
-    } else if (test != 0){
+    } else if (test != 0){ //Revisa que no se hayan introducido caracters especiales. Si se introducen, test = 1, por lo que si se mantiene en 0, significa que esta todo OK.
         alert("Por favor ingrese el rut en el formato solicitado");
     }else{
         document.getElementById('pedidos').innerHTML = ("Pedidos asociados al rut: " + text);
         mostrarTabla();
     }
 }
-
 
 
 function mostrarTabla(){
