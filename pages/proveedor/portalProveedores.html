@@ -53,9 +53,11 @@
         </nav>
 
         <div id = "buscador">
+            <p id ="mensajeAyuda">*Si su rut es 19.723.123-k, deberá digitarlo de la siguiente manera: 19723123k</p>
             <div id ="rut">
-                <input id ="rutBlock" type="text" name ="rut" placeholder="Ingrese su rut">
+                <input id ="rutBlock" type="text" name ="rut" placeholder="Ingrese su rut" maxlength="10" >
             </div>
+            
             <button type ="submit" id ="botonBuscar" onclick="verificarRut()">Buscar Orden de compra asociada</button>
         </div>
 

@@ -1,22 +1,40 @@
 /*DESARROLLADO POR MICHAEL NAVARRETE */
-/*SCRIPTS PORTAL PROVEEDORES*/
+/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL PROVEEDORES*/
 
 function verificarRut(){
     var text = document.getElementById('rutBlock').value;
-    console.log(text);
-    if (text != "") {
+    var largo = text.length;
+    var filtro = ' -.';
+    var test = 0;
+
+    for (var i = 0; i < largo; i++){
+        for (var j = 0; j < filtro.length; j++){
+            if (text.charAt(i) == filtro.charAt(j)){
+                test = 1;
+            }
+        }
+    }
+
+
+    if (text == ""){ //Revisa que el rut no sea ingresado vacio.
+        alert("Por favor digite su rut.")
+    } else if (largo < 10){ //Revisa que el rut cumpla con el minimo de caracteres.
+        alert("Por favor ingrese un rut válido.") 
+    } else if (test != 0){
+        alert("Por favor ingrese el rut en el formato solicitado");
+    }else{
         document.getElementById('pedidos').innerHTML = ("Pedidos asociados al rut: " + text);
         mostrarTabla();
-    } else {
-        alert("Por favor digite su rut.")
     }
 }
+
+
 
 function mostrarTabla(){
     document.getElementById('showTable').style.display = 'block';
 }
 
-/*SCRIPTS PORTAL CHECK*/
+/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL CHECK*/
 
 function checkReserva(){
     var text = document.getElementById('rutBlock').value;
@@ -42,7 +60,7 @@ function checkOut(){
     document.getElementById('check').innerHTML = "Se ha aplicado el Check Out con éxito a la reserva";
 }
 
-/*SCRIPTS PORTAL OPERADOR/PROVEEDORES*/
+/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL OPERADOR/PROVEEDORES*/
 
 function generarOrden(){
     document.getElementById('ordenCompra').style.display = 'block';
@@ -54,7 +72,7 @@ function recepcionarOrden(){
 }
 
 
-/*SCRIPTS PORTAL INFORMES*/
+/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL INFORMES*/
 
 function download(){
     document.getElementById('alerta').style.display = 'block';

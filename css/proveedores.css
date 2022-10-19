@@ -180,6 +180,14 @@ h1{
     cursor: pointer;
 }
 
+#mensajeAyuda{
+    color:red;
+    font-style: italic;
+}
+
+
+
+
 /*Informacion de los pedidos*/
 .infoPed{
     width: 70%;
