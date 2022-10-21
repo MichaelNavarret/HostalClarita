@@ -17,19 +17,14 @@ function verificarRut(){
 
     if (text == ""){ //Revisa que el rut no sea ingresado vacio.
         alert("Por favor digite su rut.")
-    } else if (largo < 10){ //Revisa que el rut cumpla con el minimo de caracteres.
+        document.getElementById('rutBlock').value = 0;
+    } else if (largo < 9){ //Revisa que el rut cumpla con el minimo de caracteres.
         alert("Por favor ingrese un rut válido.") 
+        document.getElementById('rutBlock').value = 0;
     } else if (test != 0){ //Revisa que no se hayan introducido caracters especiales. Si se introducen, test = 1, por lo que si se mantiene en 0, significa que esta todo OK.
         alert("Por favor ingrese el rut en el formato solicitado");
-    }else{
-        document.getElementById('pedidos').innerHTML = ("Pedidos asociados al rut: " + text);
-        mostrarTabla();
+        document.getElementById('rutBlock').value = 0;
     }
-}
-
-
-function mostrarTabla(){
-    document.getElementById('showTable').style.display = 'block';
 }
 
 /*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL CHECK*/

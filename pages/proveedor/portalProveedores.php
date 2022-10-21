@@ -1,4 +1,7 @@
 <!--DESARROLLADO POR MICHAEL NAVARRETE-->
+<?php
+    include('../../php/connection.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,37 +55,29 @@
             </ul>
         </nav>
 
-        <div id = "buscador">
+        <form id ="buscador" name="buscador" method="post" action="">
             <p id ="mensajeAyuda">*Si su rut es 19.723.123-k, deberá digitarlo de la siguiente manera: 19723123k</p>
             <div id ="rut">
-                <input id ="rutBlock" type="text" name ="rut" placeholder="Ingrese su rut" maxlength="10">
+                <input id ="rutBlock" name ="rutBlock" type="text" name ="rut" placeholder="Ingrese su rut" maxlength="10">
             </div>
+            <button type ="submit" id ="botonBuscar" name ="botonBuscar" onclick = "verificarRut()"> Buscar Orden </button>
+        </form>
+        
+        <?php
+            include('../../php/consulta_OrdenProveedor.php');
             
-            <button type ="submit" id ="botonBuscar" onclick="verificarRut()">Buscar Orden de compra asociada</button>
-        </div>
+            if(isset($_POST["botonBuscar"])){
+                $rut = $_POST["rutBlock"];
+                if($rut != 0){
+                    revisar($rut);
+                }
+            }
+            
 
-        <div id ="showTable">
-            <h2 id ="pedidos"></h2>
-            <table id="tabla">
-                <tr id = "cabecera">
-                    <td><strong>Numero</strong></td>
-                    <td><strong>Fecha</strong></td>
-                    <td><strong>Estado</strong></td>
-                </tr>
-                <tr>
-                    <td><a href="infoPedido.html">Empty</a></td>
-                    <td>Empty/empty/empty</td>
-                    <td>Empty</td>
-                </tr>
-                <tr>
-                    <td><a href="infoPedido.html">Empty</a></td>
-                    <td>Empty/empty/empty</td>
-                    <td>Empty</td>
-                </tr>
-            </table>
-        </div>
+        ?>
+
+        
     </div>
-
 
 </body>
 </html>
