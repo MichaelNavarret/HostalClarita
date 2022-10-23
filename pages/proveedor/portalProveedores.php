@@ -50,7 +50,8 @@
 
         <nav id="menu">
             <ul>
-                <li><a href="portalProveedores.html">Inicio</a> </li>
+                <li><a href="portalProveedores.php">Inicio</a> </li>
+                <li><a href="infoPedido.php"> Detalle Orden </a></li>
                 <li><a href="#">Salir</a> </li>
             </ul>
         </nav>
@@ -64,16 +65,15 @@
         </form>
         
         <?php
-            include('../../php/consulta_OrdenProveedor.php');
+            include('../../php/consultas.php');
             
             if(isset($_POST["botonBuscar"])){
                 $rut = $_POST["rutBlock"];
                 if($rut != 0){
                     revisar($rut);
+                    global $id;
                 }
             }
-            
-
         ?>
 
         

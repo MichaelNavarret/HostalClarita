@@ -1,4 +1,7 @@
 <!--DESARROLLADO POR MICHAEL NAVARRETE-->
+<?php
+    include('../../php/connection.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,33 +50,28 @@
 
         <nav id="menu">
             <ul>
-                <li><a href="portalProveedores.html">Inicio</a> </li>
+                <li><a href="portalProveedores.php">Inicio</a> </li>
+                <li><a href="infoPedido.php"> Detalle Orden </a></li>
                 <li><a href="#">Salir</a> </li>
             </ul>
         </nav>
         <br>
-        <div class = "infoPed">
-            <div id ="tablePedidos">
-                <h2 id ="pedidos">Pedido Nro: </h2>
-                <table id="tabla">
-                    <tr id = "cabecera">
-                        <td><strong>Producto</strong></td>
-                        <td><strong>Tipo</strong></td>
-                        <td><strong>Cantidad</strong></td>
-                    </tr>
-                    <tr>
-                        <td>Empty</td>
-                        <td>Empty/empty/empty</td>
-                        <td>Empty</td>
-                    </tr>
-                    <tr>
-                        <td>Empty</td>
-                        <td>Empty/empty/empty</td>
-                        <td>Empty</td>
-                    </tr>
-                </table>
+        
+        <form id ="buscador" name="buscador" method="post" action="">
+            <p id ="mensajeAyuda">Ingrese Id de la Orden de pedido</p>
+            <div id ="rut">
+                <input id ="rutBlock" name ="rutBlock" type="number" name ="rut" placeholder="Ingrese ID de la Orden" min=1 >
             </div>
-        </div>
+            <button type ="submit" id ="botonBuscar" name ="botonBuscar"> Buscar Orden </button>
+        </form>
+        
+        <?php
+            include('../../php/consultas.php');
+            if(isset($_POST['botonBuscar'])){
+                $id = $_POST['rutBlock'];
+                detalle_Orden($id);
+            }
+        ?>
     </div>
 </body>
 </html>
