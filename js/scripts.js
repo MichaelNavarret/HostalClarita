@@ -29,29 +29,6 @@ function verificarRut(){
 
 /*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL CHECK*/
 
-function checkReserva(){
-    var text = document.getElementById('rutBlock').value;
-    console.log(text);
-    if (text != "") {
-        mostrarReserva();
-    } else {
-        alert("Por favor digite el rut del cliente.")
-    }
-}
-
-function mostrarReserva(){
-    document.getElementById('showReserva').style.display = 'block';
-}
-
-function checkIn(){
-    document.getElementById('succesCheck').style.display = 'block';
-    document.getElementById('check').innerHTML = "Se ha aplicado el Check In con éxito a la reserva";
-}
-
-function checkOut(){
-    document.getElementById('succesCheck').style.display = 'block';
-    document.getElementById('check').innerHTML = "Se ha aplicado el Check Out con éxito a la reserva";
-}
 
 /*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL OPERADOR/PROVEEDORES*/
 

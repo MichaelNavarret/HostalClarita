@@ -49,12 +49,12 @@
         <nav id="menu" >
             <ul >
                 <li><a class="text-decoration-none" href="portalOperador.html">Inicio</a> </li>
-                <li id="hab"><a class="text-decoration-none" href="habitaciones.php">Habitaciones</a></li>
-                <li><a class="text-decoration-none" href="check.html">Check</a></li>
-                <li><a class="text-decoration-none" href="cancelaciones.html">Cancelaciones</a></li>
-                <li><a class="text-decoration-none" href="proveedores.html">Proveedores</a></li>
-                <li><a class="text-decoration-none" href="informes.html">Informes</a></li>
-                <li><a class="text-decoration-none" href="#">Salir</a> </li>
+                <li><a class="text-decoration-none" href="habitaciones.php">Habitaciones</a></li>
+                <li><a class="text-decoration-none" href="check.php">Check</a></li>
+                <li><a class="text-decoration-none" href="cancelaciones.php">Cancelaciones</a></li>
+                <li>Proveedores</li>
+                <li>Informes</li>
+                <li>Salir</li>
             </ul>
         </nav>
     </div>

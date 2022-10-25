@@ -10,13 +10,13 @@
     <title>Portal Operador - Hostal Doña Clarita</title>
     
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/informes.css">
+    <link rel="stylesheet" href="../../css/cancelaciones_proveedores.css">
     
     
 </head>
 <body>
     <div id ="container">
-        <h1>Generador de Informes</h1> 
+        <h1>Proveedores</h1> 
         <div id ="tarjetaUsuario">
             <div id="imagenPerfil">
                 Imagen de Perfil
@@ -49,37 +49,40 @@
         <nav id="menu" >
             <ul >
                 <li><a class="text-decoration-none" href="portalOperador.html">Inicio</a> </li>
-                <li id="hab"><a class="text-decoration-none" href="habitaciones.html">Habitaciones</a></li>
-                <li><a class="text-decoration-none" href="check.html">Check</a></li>
-                <li><a class="text-decoration-none" href="cancelaciones.html">Cancelaciones</a></li>
-                <li><a class="text-decoration-none" href="proveedores.html">Proveedores</a></li>
-                <li><a class="text-decoration-none" href="informes.html">Informe</a></li>
-                <li><a class="text-decoration-none" href="#">Salir</a> </li>
+                <li><a class="text-decoration-none" href="habitaciones.php">Habitaciones</a></li>
+                <li><a class="text-decoration-none" href="check.php">Check</a></li>
+                <li><a class="text-decoration-none" href="cancelaciones.php">Cancelaciones</a></li>
+                <li>Proveedores</li>
+                <li>Informes</li>
+                <li>Salir</li>
             </ul>
         </nav>
         <br>
-        <div id="contentInfo">
-            <div class id="downloadInfo">
-                <h3>Seleccionar Informe a descargar</h3>
-                <div id ="selector">
-                    <select name="informe-name" id="informe-name">
-                        <option value="01">Registro de ventas</option>
-                        <option value="02">Registro de sesion</option>
-                        <option value="03">Registro de pedidos</option>
-                        <option value="04">Registro de visitas web</option>
+        <div id ="recepContainer">
+            <h2>Recepcion de Orden de pedido</h2>
+            <form action="">
+                <div class ="campo">
+                    <label for="nroPedido"> Ingrese numero de pedido: </label>
+                    <input type="number" name ="nroPedido" id ="nroPedido">
+                </div>
+                <div class ="campo">
+                    <label for=""> Seleccionar el estado:  </label>
+                    <select name="estado-name" id="estado-name">
+                        <option value="01">Aceptado</option>
+                        <option value="02">Rechazado</option>
                     </select>
                 </div>
-                <div class="clearFix"></div>
-                <button type ="submit"  id="btnDownload" onclick="download()" >Download</button>
-                <div class="alert alert-info" role="alert" id="alerta">
-                    <p id="infoDown"></p>
-                  </div>
-            </div>
+                <div class ="campo">
+                    <label for="w3review">Observacion</label>
+                    <br>
+                    <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                </div>
+
+                <button id ="btnEnviar" class ="campo" type="submit">Enviar</button>
+            </form>
         </div>
-
     </div>
-    
-
+    <br>
     <!--Scripts-->
     <script src="../../js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="../../js/jquery-3.6.1.min.js"></script>

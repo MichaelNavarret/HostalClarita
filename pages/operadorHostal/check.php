@@ -49,53 +49,30 @@
         <nav id="menu" >
             <ul >
                 <li><a class="text-decoration-none" href="portalOperador.html">Inicio</a> </li>
-                <li id="hab"><a class="text-decoration-none" href="habitaciones.html">Habitaciones</a></li>
-                <li><a class="text-decoration-none" href="check.html">Check</a></li>
-                <li><a class="text-decoration-none" href="cancelaciones.html">Cancelaciones</a></li>
-                <li><a class="text-decoration-none" href="proveedores.html">Proveedores</a></li>
-                <li><a class="text-decoration-none" href="informes.html">Informes</a></li>
-                <li><a class="text-decoration-none" href="#">Salir</a> </li>
+                <li><a class="text-decoration-none" href="habitaciones.php">Habitaciones</a></li>
+                <li><a class="text-decoration-none" href="check.php">Check</a></li>
+                <li><a class="text-decoration-none" href="cancelaciones.php">Cancelaciones</a></li>
+                <li>Proveedores</li>
+                <li>Informes</li>
+                <li>Salir</li>
             </ul>
         </nav>
 
-        <div id = "buscador">
+        <form method ="post" name ="buscador" id = "buscador">
             <div id ="rut">
-                <input id ="rutBlock" type="text" name ="rut" placeholder="Ingrese código reserva">
+                <input id ="rutBlock" name ="rutBlock" type="text" placeholder="Ingrese código reserva">
             </div>
-            <button type ="submit" id ="botonBuscar" onclick="checkReserva()">Buscar reserva</button>
-        </div>
+            <button type ="submit" id ="botonBuscar" name ="botonBuscar">Activar / Terminar reserva</button>
+        </form>
 
-        <div id ="showReserva">
-            <div class="datosReserva">
-                <label for=""><strong>ID Reserva:</strong></label>
-                <label for="">placeholder</label>
-            </div>
-            <div class="datosReserva">
-                <label for=""><strong>Cliente:</strong></label>
-                <label for="">placeholder</label>
-            </div>
-            <div class="datosReserva">
-                <label for=""><strong>Fecha Reserva:</strong></label>
-                <label for="">placeholder</label>
-            </div>
-            <div class="datosReserva">
-                <label for=""><strong>Fecha Inicio:</strong></label>
-                <label for="">placeholder</label>
-            </div>
-            <div class="datosReserva">
-                <label for=""><strong>Fecha Termino:</strong></label>
-                <label for="">placeholder</label>
-            </div>
-            <div class="datosReserva">
-                <label for=""><strong>Tipo Pago:</strong></label>
-                <label for="">placeholder</label>
-            </div>
-
-            <button type ="button" class=" botonCheck btn btn-success" onclick="checkIn() ">Check In</button>
-            <button type ="button" class=" botonCheck btn btn-danger"  onclick="checkOut()">Check Out</button>
-
-        </div>
-
+        <?php
+            include("../../php/consultas.php");
+            if(isset($_POST['botonBuscar'])){
+                $id = $_POST['rutBlock'];
+                revisarRevision($id);
+            }
+        ?>
+    
         <div id ="succesCheck" class="alert alert-success alert-dismissible fade show" role="alert">
             <p id ="check"></p>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

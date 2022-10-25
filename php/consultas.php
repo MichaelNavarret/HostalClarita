@@ -36,6 +36,13 @@
         text-align: center;
         padding: 10px;
     }
+    .mensaje{
+        text-align:center;
+        background-color:#67bfb0;
+        height:30px;
+        border-radius:15px;
+        border: 1px dashed black;
+    }
 </style>
 
 <?php
@@ -95,8 +102,8 @@
         </div>");    
     }
 
-    function prueba($rut){
-        echo ("Su rut es $rut");
+    function prueba(){
+        echo ("Probando");
     }
 
     function detalle_Orden($id){
@@ -222,6 +229,141 @@
                         <td> $detail </td>
                         <td> $state </td>
                         <td> $price </td>
+                 </tr> ");
+        }
+    
+        echo ("
+            </table>
+            </div>");
+    
+    }
+
+    //Portal Operador - Habitaciones
+
+    function revisarRevision($id){
+        global $conn;
+        $consulta = "SELECT COUNT(*) Reservas FROM Reserva where idReserva = $id;"; //WHERE rutProveedor = $rut 
+        $ejecutar = sqlsrv_query($conn, $consulta);
+        while($fila = sqlsrv_fetch_array($ejecutar)){
+            $nro_Pedidos = $fila['Reservas'];
+        }
+        if($nro_Pedidos == 0){
+            echo ("<div class = 'alerta' > No existen reservas para el ID Reserva: $id </div>");
+        }else{
+            desplegarReserva($id);
+        }
+        
+
+    }
+
+    function desplegarReserva($id){
+        global $conn;
+        $consulta = "SELECT	R.idReserva ID,
+                            H.nombre + ' ' + H.apellido Cliente,
+                            CONVERT(VARCHAR, R.fechaReserva, 111 ) FechaReserva,
+                            CONVERT(VARCHAR, R.fechaInicio, 111 ) FechaInicio,
+                            CONVERT(VARCHAR, R.fechaTermino, 111 ) FechaTermino
+                    FROM RESERVA AS R
+                    JOIN Huesped AS H ON R.idReserva = H.idReserva
+                    JOIN Habitacion AS HB ON R.idReserva = HB.idReserva
+                    JOIN EstadoReserva AS ER ON R.idReserva = ER.idReserva
+                    JOIN Estado AS ES ON ER.idEstado = ES.idEstado
+                    WHERE R.idReserva = $id
+                    Group by	R.idReserva,
+                                H.nombre + ' ' + H.apellido ,
+                                CONVERT(VARCHAR, R.fechaReserva, 111 ) ,
+                                CONVERT(VARCHAR, R.fechaInicio, 111 ) ,
+                                CONVERT(VARCHAR, R.fechaTermino, 111 ) ,
+                                ES.nombre ;";
+        $ejecutar = sqlsrv_query($conn, $consulta);
+        $i = 0;
+        while($file = sqlsrv_fetch_array($ejecutar)){
+            $id = $file['ID'];
+            $cliente = $file['Cliente'];
+            $fechaRe = $file['FechaReserva'];
+            $fechaIn = $file['FechaInicio'];
+            $fechaTe = $file['FechaTermino'];
+            $i++;
+
+            echo ("
+                <form id ='checkInOut' name = 'checkInOut' class = 'contenedor'> 
+                    <h3>Detalles reserva </h3>
+                    <br>
+                    <p> <strong> ID Reserva:  </strong>$id</p>
+                    <p> <strong> Cliente:  </strong>$cliente</p>
+                    <p> <strong> FechaReserva:  </strong>$fechaRe</p>
+                    <p> <strong> FechaInicio:  </strong>$fechaIn</p>
+                    <p> <strong> FechaTermino:  </strong>$fechaTe</p>
+                ");
+        }
+        $update = " UPDATE EstadoReserva
+                    SET idEstado = 
+                        CASE idEstado
+                            WHEN 1 THEN 3
+                            WHEN 3 THEN 4
+                            ELSE 1
+                        END
+                    WHERE idReserva = $id ;";
+
+        $ejecutar = sqlsrv_query($conn, $update);
+        
+        $consulta = "   SELECT	ES.nombre Estado
+                        FROM RESERVA AS R
+                        JOIN Huesped AS H ON R.idReserva = H.idReserva
+                        JOIN Habitacion AS HB ON R.idReserva = HB.idReserva
+                        JOIN EstadoReserva AS ER ON R.idReserva = ER.idReserva
+                        JOIN Estado AS ES ON ER.idEstado = ES.idEstado
+                        WHERE R.idReserva = $id
+                        Group by	R.idReserva,
+                                    H.nombre + ' ' + H.apellido ,
+                                    CONVERT(VARCHAR, R.fechaReserva, 111 ) ,
+                                    CONVERT(VARCHAR, R.fechaInicio, 111 ) ,
+                                    CONVERT(VARCHAR, R.fechaTermino, 111 ) ,
+                                    ES.nombre 
+                        ; ";
+        $ejecutar = sqlsrv_query($conn, $consulta);
+        while($file = sqlsrv_fetch_array($ejecutar)){
+            $estado = $file['Estado'];
+            echo 
+            ("
+                <p class = 'mensaje' > El nuevo estado de la reserva es:   <strong> $estado </strong> </p>
+            </form>
+            ");
+        }
+    }
+
+    //CANCELACIONES
+    function desplegarCancelaciones(){
+        global $conn;
+        echo("
+        <div class ='contenedor'>
+            <h1 id = 'titulo'>Lista de cancelaciones </h1>    
+                <table>
+                <tr class = 'cabecera'>
+                    
+                    <td><strong> ID Reserva </strong></td>
+                    <td><strong> Empresa </strong></td>
+                    <td><strong> Fecha Reserva </strong></td>
+                </tr>");
+        $consulta = "SELECT R.idReserva ID,
+                            EMP.nombre Empresa,
+                            CONVERT(VARCHAR,R.fechaReserva, 111) FechaReserva
+                    FROM RESERVA AS R
+                    JOIN EstadoReserva AS ER ON R.idReserva = ER.idReserva
+                    JOIN ESTADO AS ES ON ER.idEstado = ES.idEstado
+                    JOIN Huesped AS H ON R.idReserva = H.idReserva
+                    JOIN Empresa AS EMP ON H.rutEmpresa = EMP.rutEmpresa
+                    WHERE ES.nombre = 'Cancelada';";
+        $ejecutar = sqlsrv_query($conn,$consulta);
+        $i=0;
+        while($file = sqlsrv_fetch_array($ejecutar)){
+            $id = $file['ID'];
+            $empresa = $file['Empresa'];
+            $fecha = $file['FechaReserva'];
+            echo ("<tr>
+                        <td> $id </td>
+                        <td> $empresa </td>
+                        <td> $fecha </td>
                  </tr> ");
         }
     
