@@ -183,4 +183,51 @@
         echo ("</div>");
     }
 
+
+    // Portal Operador
+
+    function mostrarHabitaciones(){
+        global $conn;
+        echo("
+        <div class ='contenedor'>
+            <table>
+                <tr class = 'cabecera'>
+                    <td><strong> ID Habitacion </strong></td>
+                    <td><strong> Tipo </strong></td>
+                    <td><strong> Detalle </strong></td>
+                    <td><strong> Estado </strong></td>
+                    <td><strong> Valor </strong></td>
+                </tr>");
+        $consulta = "SELECT	H.idHabitacion ID,
+                            TP.nombre Tipo,
+                            H.detalle Detalle,
+                            ES.nombre Estado,
+                            FORMAT(TP.valor,'$ ### ### ###') Valor
+                    FROM Habitacion AS H
+                    JOIN EstadoHabitacion AS ES ON H.idEstadoHabitacion = ES.idEstadoHabitacion
+                    JOIN TipoHabitacion AS TP ON H.idTipoHabitacion = TP.idTipoHabitacion;";
+        $ejecutar = sqlsrv_query($conn, $consulta);
+        $i = 0;
+        while($file = sqlsrv_fetch_array($ejecutar)){
+            $id = $file['ID'];
+            $tipe = $file['Tipo'];
+            $detail = $file['Detalle'];
+            $state = $file['Estado'];
+            $price = $file['Valor'];
+            $i++;
+
+            echo ("<tr>
+                        <td> $id </td>
+                        <td> $tipe </td>
+                        <td> $detail </td>
+                        <td> $state </td>
+                        <td> $price </td>
+                 </tr> ");
+        }
+    
+        echo ("
+            </table>
+            </div>");
+    
+    }
 ?>
