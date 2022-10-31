@@ -1,0 +1,227 @@
+/*-----------------------------------------------------------------------------------------------DESARROLLADO POR MICHAEL NAVARRETE */
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    color:#57350F;
+}
+
+
+.clearFix{
+    float: none;
+    clear: both;
+}
+/*
+body{
+    display: grid;
+    min-height: 100vh;
+}
+*/
+/*-----------------------------------------------------------------------------------------------MENU PRINCIPAL*/
+
+#menu{
+    min-height: 40px;
+    background-color: #57350F;
+    width: 100%;
+}
+#menu #ul01{
+    padding: 0px;
+}
+#menu #ul01 li {
+    display: block;
+    float: left;
+    padding: 10px;
+    font-size: large;
+    border-right: 1px solid white;
+}
+
+#menu #ul01 li:hover{
+    background-color: white;
+}
+
+#menu #ul01 li:hover a{
+    color: black;
+}
+
+#menu #ul01 li a{
+    color: white;
+}
+
+#menu #ul01 li #logo{
+    width: 30px;
+    height: 25px;
+}
+
+#menu ul #salir {
+    text-decoration: none;
+    display: block;
+    float: right;
+    padding: 10px;
+    font-size: large;
+    border-left: 1px solid white;
+}
+
+#menu ul #salir:hover{
+    background-color: white;
+}
+
+#menu ul #salir:hover{
+    color: black;
+}
+
+#menu ul #salir{
+    color: white;
+}
+
+/*-----------------------------------------------------------------------------------------------SUB MENÚ*/
+
+#menu #ul01 li ul{
+    display: none;
+    position:absolute;
+    padding:0;
+    background-color: white;
+    top: 4%;
+}
+
+#menu #ul01 li ul li{
+    float:none; 
+    width: auto;
+}
+
+#menu #ul01 li ul li a{
+    margin: 0;
+    line-height:120%; 
+    padding:10px 15px;
+}
+
+#menu #ul01 li ul li:hover{
+    background-color: #EBD6BE;
+    
+}
+
+#menu #ul01 li ul li:hover a{
+    margin: 0;
+    line-height:120%; 
+    padding:10px 15px;
+}
+
+#menu #ul01 li:hover ul{
+    display: block;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------BANNER*/
+
+#miniBanner{
+    background-color: #D1AA7D;
+    min-height: 40px;
+}
+
+#miniBanner h2{
+    padding-top: .3%;
+    padding-left: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #57350F;
+}
+
+
+/*-----------------------------------------------------------------------------------------------BUSCADOR*/
+.buscador{
+    min-height: 50px ;
+    text-align: center;
+    margin: .5%;
+}
+
+.campo{
+    margin-top: .2%;
+    display: block;
+    float: left;
+    margin-left: 5%;
+    line-height: 250%;
+    font-size: large;
+    width: 350px;
+}
+.campo #date01, #date02, #state{
+    margin-left: .5%;
+    font-size: large;
+}
+.campo #state{
+    width: 150px;
+    height: 30px;
+}
+#btn{
+    text-align: center;
+    width: 95%;
+    margin-top: 1.5%;
+    margin-right: 3%;
+}
+#btn{
+    background-color: #D1AA7D;
+    color: #57350F;
+    line-height: 200%;
+    border-radius: 10px;
+    border:1px solid #304478;
+}
+
+#btn:hover {
+    border:1px dashed #304478;
+    background-color: #EBD6BE;
+    color: white;
+    width: 100%;
+    line-height: 200%;
+    border-radius: 10px;
+    color: black;
+    cursor:pointer;
+}
+/*-----------------------------------------------------------------------------------------------INFO PEDIDO*/
+.infoPedido{
+    border-radius: 10px;
+    background-color: #57350F;;
+    margin: auto;
+    width: 80%;
+    color:#EBD6BE;
+    min-height: auto;
+}
+.infoPedido h3, p{
+    text-align: justify;
+    margin-left: .5%;
+    margin-bottom: .5%;
+    color:#EBD6BE;
+}
+#final{
+    padding-bottom: .5%;
+}
+/*-----------------------------------------------------------------------------------------------CONTENIDO PEDIDO*/
+.contenidoPedid{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    padding: .2%;
+}
+.cabecera{
+    text-align: center;
+    background-color: #D1AA7D;
+}
+.cabecera td{
+    line-height: 200%;
+    width: 100vh;
+}
+.filas td{
+    text-align: center;
+    font-size: large;
+    line-height: 400%;
+    border-bottom: 1px dashed #524231;
+}
+/*-----------------------------------------------------------------------------------------------FOOTER*/
+footer{
+    text-align: center;
+    background-color: #524231;
+}
+
+.pie p{
+    margin-top: 10px;
+    color: #EBD6BE;
+    font-size: x-large;
+}
