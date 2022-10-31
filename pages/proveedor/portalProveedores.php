@@ -12,7 +12,7 @@
     <title>Portal Proveedores - Hostal Doña Clarita</title>
 
     <link rel="icon" href="img/WhatsApp Image 2022-09-21 at 3.07.35 PM.jpeg">
-    <link rel="stylesheet" type = "text/css" href="../../css/proveedores.css">
+    <link rel="stylesheet" type = "text/css" href="../../css/proveedores/proveedores.css">
     <script src="../../js/scripts.js"></script>
 </head>
 <body>
@@ -25,15 +25,15 @@
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="#">Listar ordenes</a></li>
-                        <li><a href="#">Buscar ordenes</a></li>                           
+                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>
+                        <li><a href="buscarOrden.php">Buscar orden</a></li>                           
                     </ul>
                 </li>
                 <li>
                 <a href="#"> Inventario </a>
                     <ul>
-                        <li><a href="#">Listar Productos</a></li>
-                        <li><a href="#">Administrar Productos</a></li>                           
+                        <li><a href="listarProductos.php">Listar Productos</a></li>
+                        <li><a href="adminProductos.php">Administrar Productos</a></li>                           
                     </ul>
                 </li>
             </ul>
