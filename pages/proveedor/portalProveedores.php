@@ -18,66 +18,158 @@
 <body>
     
     <div id ="container">
-        <h1>Portal Proveedores</h1> 
-        <div id ="tarjetaUsuario">
-            <div id="imagenPerfil">
-                Imagen de Perfil
-            </div>
-            <div id="datos">
-                <div class ="campo">
-                    <label for=""><strong>Proveedor:</strong></label>
-                    <label for="">Proveedor</label>
-                </div>
-                <div class ="campo">
-                    <label for=""><strong>Rubro:</strong> </label>
-                    <label for="">Rubro </label>
-                </div>
-                <div class ="campo">
-                    <label for=""><strong>Email:</strong></label>
-                    <label for="">email@gmail.com </label>
-                </div>
-            </div>
-        </div>
-        <div id ="logo">
-            <img id ="logoImage" src="../../img/WhatsApp Image 2022-09-21 at 3.07.35 PM.jpeg" alt="logo">
-        </div>
-        <div id ="textoLogo">
-            <h2 id ="first">Hostal</h2>
-            <h2 id ="second">Doña Clarita</h2>
-        </div>
-
-        <div class="clearFix"></div>
-
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// MENU -->
         <nav id="menu">
-            <ul>
+            <ul id ="ul01" >
                 <li><a href="portalProveedores.php">Inicio</a> </li>
-                <li><a href="infoPedido.php"> Detalle Orden </a></li>
-                <li><a href="#">Salir</a> </li>
+                <li>
+                    <a href="#"> Orden de compra </a>
+                    <ul>
+                        <li><a href="#">Listar ordenes</a></li>
+                        <li><a href="#">Buscar ordenes</a></li>                           
+                    </ul>
+                </li>
+                <li>
+                <a href="#"> Inventario </a>
+                    <ul>
+                        <li><a href="#">Listar Productos</a></li>
+                        <li><a href="#">Administrar Productos</a></li>                           
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li><a id ="salir" href="#">Salir</a> </li>
             </ul>
         </nav>
+        <div class="clearFix"></div>
 
-        <form id ="buscador" name="buscador" method="post" action="">
-            <p id ="mensajeAyuda">*Si su rut es 19.723.123-k, deberá digitarlo de la siguiente manera: 19723123k</p>
-            <div id ="rut">
-                <input id ="rutBlock" name ="rutBlock" type="text" name ="rut" placeholder="Ingrese su rut" maxlength="10">
-            </div>
-            <button type ="submit" id ="botonBuscar" name ="botonBuscar" onclick = "verificarRut()"> Buscar Orden </button>
-        </form>
-        
-        <?php
-            include('../../php/consultas.php');
-            
-            if(isset($_POST["botonBuscar"])){
-                $rut = $_POST["rutBlock"];
-                if($rut != 0){
-                    revisar($rut);
-                    global $id;
-                }
-            }
-        ?>
+        <div id ="miniBanner">
+            <h2>Portal Proveedores </h2>
+        </div>
+        <div class="clearFix"></div>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// CONTENIDO PRINCIPAL -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// INFORMACION PERSONAL -->
+        <div class ="mainContainer">
+            <section id ="informacion">
+                <h2 class ="titulo" >Información Personal</h2>
+
+                <?php
+                    $consulta = "  SELECT	P.rutProveedor RUT,
+                                            P.direccion DIRECCION,
+                                            P.nombre NOMBRE,
+                                            R.nombre RUBRO
+                                    FROM Proveedor AS P
+                                    JOIN Rubro AS R ON P.idRubro = R.idRubro
+                                    WHERE P.rutProveedor = '128723132';";
+                    $ejecutar = sqlsrv_query($conn, $consulta);
+                    $i = 0;
+                    while($fila = sqlsrv_fetch_array($ejecutar)){
+                        $rut = $fila['RUT'];
+                        $adress = $fila['DIRECCION'];
+                        $name = $fila['NOMBRE'];
+                        $rubro = $fila['RUBRO'];
+                    } 
+                ?>
+
+                <ul id ="datos" >
+                    <li>
+                        <div class ="datoCampo" >
+                            <h4 class ="datoCampoTitulo"><strong>Rut (Usuario):</strong> </h4>
+                            <p class ="datoCampoContent"><?php echo($rut); ?></p>
+                        </div>
+                         
+                    </li>
+                    <li>
+                        <div class ="datoCampo" >
+                            <h4 class ="datoCampoTitulo"><strong>Nombre Proveedor:</strong> </h4>
+                            <p class ="datoCampoContent"><?php echo($name); ?> </p>
+                        </div>    
+                    </li>
+                    <li>
+                        <div class ="datoCampo" >
+                            <h4 class ="datoCampoTitulo"><strong>Direccion:</strong> </h4>
+                            <p class ="datoCampoContent"><?php echo($adress); ?> </p>
+                        </div>    
+                    </li>
+                    <li>
+                        <div class ="datoCampo" >
+                            <h4 class ="datoCampoTitulo"><strong>Rubro:</strong> </h4>
+                            <p class ="datoCampoContent"><?php echo($rubro); ?> </p>
+                        </div>    
+                    </li>
+                </ul>
+            </section>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////// Contraseña -->
+            <section id ="contraseña">
+                <h2 class ="titulo" >Actualice su contraseña</h2>
+                <form action="" method="post" name ="formPass" id = "formPass">
+                    <div class="campo">
+                        <label for="">Introduzca contraseña actual: </label>
+                        <br>
+                        <input type="password" name ="oldPass" id ="oldPass">
+                    </div>
+                    <div class="campo">
+                        <label for="">Introduzca contraseña nueva: </label>
+                        <br>
+                        <input type="password" name ="newPass1" id ="newPass1">
+                    </div>
+                    <div class="campo">
+                        <label for="">Vuelva a introducir contraseña nueva: </label>
+                        <br>
+                        <input type="password" name ="newPass2" id ="newPass2">
+                    </div>
+                    
+                    <div id ="btn" >
+                        <input type="submit" name ="btnUpdate" id ="btnUpdate" value ="Actualizar Contraseña">
+                    </div>
+                    
+                </form>
+                <?php
+                    include('../../php/connection.php');
+                    if(isset($_POST['btnUpdate'])){
+                        $oldPass = $_POST["oldPass"];
+                        $newPass = $_POST["newPass1"];
+                        $newPass2 = $_POST["newPass2"];
+                        $consulta = " SELECT clave Clave  FROM Usuario WHERE rutUsuario = '128723132';";
+                        $ejecutar = sqlsrv_query($conn, $consulta);
+                        $i=0;
+                        while($fila=sqlsrv_fetch_array($ejecutar)){
+                            $pass = $fila["Clave"];
+                            $i++;
+                        }
+                        if($oldPass == $pass){
+                            if($newPass == $newPass2){
+                                $consulta = "   UPDATE Usuario
+                                                SET clave = '$newPass'
+                                                WHERE rutUsuario = '128723132';";
+                                $ejecutar = sqlsrv_query($conn, $consulta);
+                        ?>
+                            <p class ="mensaje" id="success" >Contraseña actualizada exitosamente</p>
+                        <?php
+                            }else{                                
+                        ?>
+                            <p class ="mensaje" id="fail">Contraseñas no coinciden</p>
+                        <?php
+                            }
+                        }else{
+                        ?>
+                        <p class ="mensaje" id="fail" >Contraseña Actual incorrecta</p>
+                        <?php
+                        }
+                    }    
+                        ?>
+            </section>
+        </div>
 
         
     </div>
+    <div class="clearFix"></div>
+    <footer>
+        <div class="pie">
+            <p >Todos los derechos reservados &copy; Michael Navarrete Cartes 2022 </p>
+        </div>
+        
+    </footer>
 
 </body>
 </html>

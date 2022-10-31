@@ -1,113 +1,34 @@
-/*DESARROLLADO POR MICHAEL NAVARRETE */
+/*-----------------------------------------------------------------------------------------------DESARROLLADO POR MICHAEL NAVARRETE */
 
 *{
+    list-style: none;
     text-decoration: none;
-}
-h1{
-    text-align: left;
-    margin-left: 15px;
-    font-style: italic;
+    margin: 0px;
+    color:#57350F;
 }
 
-#imagenPerfil{
-    border: 1px dashed black;
-    width: 20%;
-    float: left;
-    margin: 10px;
-    min-height: 140px;
-    text-align: center;
-    line-height: 140px;
-    box-shadow: 5px 5px rgba(162, 162, 162, 0.5);
-    
-}
-#datos{
-    border: 1px solid black;
-    width: 70%;
-    margin: 10px;
-    min-height: 140px;
-    float: left;
-}
-
-#datos .campo{
-    margin: 20px;
-    border-bottom:1px solid black ;
-}
-
-#container{
-    width: 100%;
-}
-
-#tarjetaUsuario{
-    width: 65%;
-    border: 1px solid black;
-    float: left;
-    min-height: 150px;
-
-}
 
 .clearFix{
     float: none;
     clear: both;
 }
 
-#logo{
-    margin-left: 20px;
-    width: 15%;
-    float: left;
-    min-height: 150px;
-    text-align: right;
-    
-}
-/**/
-#logoImage{
-    width: 150px;
-    height: 150px;
-}
-#textoLogo{
-    color: #513c2d;
-    margin-left: 5px;
-    width: 15%;
-    float: left;
-    min-height: 150px;
-    padding-top: 20px;
-}
-#textoLogo #first{
-    display: block;
-    width: 50%;
-    padding-bottom: 2px;
-    border-bottom: 1px solid black;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+body{
+    display: grid;
+    min-height: 100vh;
 }
 
-#textoLogo #second{
-    display: block;
-    margin-top: 0px;
-}
-
-#buscador {
-    display: block;
-}
-
-#rutBlock{
-    width: 250px;
-
-}
-
-#rut{
-    margin-bottom: 20px;
-}
+/*-----------------------------------------------------------------------------------------------MENU PRINCIPAL*/
 
 #menu{
-    margin-top: 10px;
     min-height: 40px;
-    background-color: #513c2d;
+    background-color: #57350F;
     width: 100%;
 }
-#menu ul{
+#menu #ul01{
     padding: 0px;
 }
-#menu ul li {
+#menu #ul01 li {
     display: block;
     float: left;
     padding: 10px;
@@ -115,110 +36,224 @@ h1{
     border-right: 1px solid white;
 }
 
-#menu ul li:hover{
+#menu #ul01 li:hover{
     background-color: white;
 }
 
-#menu ul li:hover a{
+#menu #ul01 li:hover a{
     color: black;
 }
 
-#menu ul li a{
+#menu #ul01 li a{
     color: white;
 }
 
-#buscador{
-    border: 1px solid black;
-    width: 68%;
-    margin: auto;
-    margin-top: 10px;
-    text-align: center;
-    padding: 50px;
+#menu #ul01 li #logo{
+    width: 30px;
+    height: 25px;
 }
 
-#showTable{
-    border: 1px solid black;
-    width: 70%;
-    text-align: center;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 30px;
+#menu ul #salir {
+    text-decoration: none;
+    display: block;
+    float: right;
+    padding: 10px;
+    font-size: large;
+    border-left: 1px solid white;
+}
+
+#menu ul #salir:hover{
+    background-color: white;
+}
+
+#menu ul #salir:hover{
+    color: black;
+}
+
+#menu ul #salir{
+    color: white;
+}
+
+/*-----------------------------------------------------------------------------------------------SUB MENÚ*/
+
+#menu #ul01 li ul{
     display: none;
+    position:absolute;
+    padding:0;
+    background-color: white;
+    top: 4%;
 }
-#showTable h2{
-    width: 255px;
-    margin:auto;
-    margin-bottom: 10px;
-    border-bottom: 1px solid black;
+
+#menu #ul01 li ul li{
+    float:none; 
+    width: auto;
 }
-#showTable #tabla{
-    margin: auto;
+
+#menu #ul01 li ul li a{
+    margin: 0;
+    line-height:120%; 
+    padding:10px 15px;
 }
-#showTable #tabla #cabecera{
-    background-color: #eee;
+
+#menu #ul01 li ul li:hover{
+    background-color: #EBD6BE;
     
 }
-#showTable #tabla tr td{
-    border: 1px solid black;
+
+#menu #ul01 li ul li:hover a{
+    margin: 0;
+    line-height:120%; 
+    padding:10px 15px;
+}
+
+#menu #ul01 li:hover ul{
+    display: block;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------BANNER*/
+
+#miniBanner{
+    background-color: #D1AA7D;
+    min-height: 40px;
+}
+
+#miniBanner h2{
+    padding-top: .3%;
+    padding-left: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #57350F;
+}
+
+/*-----------------------------------------------------------------------------------------------LINEA*/
+#linea{
+    height: 40px;
+    background-color: #4F70C4;
+}
+/*-----------------------------------------------------------------------------------------------MAIN CONTAINER*/
+
+/*-----------------------------------------------------------------------------------------------INFORMACION PERSONAL*/
+#informacion{
+    display: block;
+    float: left;
+    margin: .2%;
+    margin-top: 1%;
+    margin-left: 5%;
+    width: 40%;
+    border: 1px solid #06397A;
+    height: 500px;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
+}
+#datos{
     text-align: center;
-    padding: 10px;
 }
 
-#botonBuscar{
-    color:white;
-    border-radius: 15px;
-    border-color: #6E998A;
-    background-color: #a37c5f;
-    min-height: 35px;
-    box-shadow: 5px 5px rgba(162, 162, 162, 0.5);
+.datoCampoTitulo{
+    margin-right: 3%;
+    margin-top: 4%;
+    line-height: 200%;
+    background-color: #EBD6BE ;
+    border-radius: 10px;
 }
 
-#botonBuscar:hover{
-    background-color: #6E998A;
+.datoCampoContent{
+    margin-right: 3%;
+    margin-top: 2%;
+    border-bottom: 1px dashed #06397A ;
+}
+
+/*-----------------------------------------------------------------------------------------------CONTRASEÑA*/
+#contraseña{
+    display: block;
+    margin: .8%;
+    margin-top: 1%;
+    float: left;
+    width: 50%;
+    border: 1px solid #06397A;
+    height:  350px;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
+}
+
+#formPass{
+    padding-top: 1%;
+    padding-left:3% ;
+}
+.campo{
+    margin-top: 1.5%;
+}
+.campo input{
+    margin-top: 1%;
+    width: 94%;
+}
+
+#btn{
+    text-align: center;
+    width: 95%;
+    margin-top: 1.5%;
+    margin-right: 3%;
+}
+#btn input{
+    background-color: #D1AA7D;
+    color: #57350F;
+    width: 100%;
+    line-height: 200%;
+    border-radius: 10px;
+    border:1px solid #304478;
+    
+
+}
+
+#btn:hover input {
+    border:1px dashed #304478;
+    background-color: #EBD6BE;
     color: white;
-    cursor: pointer;
+    width: 100%;
+    line-height: 200%;
+    border-radius: 10px;
+    color: black;
+    cursor:pointer;
 }
 
-#mensajeAyuda{
-    color:red;
-    font-style: italic;
-}
-
-
-
-
-/*Informacion de los pedidos*/
-.infoPed{
-    width: 70%;
-    margin: auto;
-    border: 1px solid black;
-}
-
-#tablePedidos{
-    width: 70%;
+.mensaje{
     text-align: center;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 30px;
-}
-#tablePedidos h2{
-    width: 255px;
-    margin:auto;
-    margin-bottom: 10px;
-    border-bottom: 1px solid black;
-}
-#tablePedidos #tabla{
-    margin: auto;
-}
-#tablePedidos #tabla #cabecera{
-    background-color: #eee;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    line-height: 250%;
+    width: 60%;
+    color:wheat;
     
 }
-#tablePedidos #tabla tr td{
-    border: 1px solid black;
-    text-align: center;
-    padding: 10px;
+#fail{
+    background-color: #EB607E;
+}
+#success{
+    color: black;
+    background-color: #58dddd;
+    border-radius: 10px;
 }
 
+/*-----------------------------------------------------------------------------------------------INFORMACION PERSONAL + CONTRASEÑA*/
+.titulo{
+    color: white;
+    text-align: center;
+    background-color: #57350F;
+    line-height: 200%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/*-----------------------------------------------------------------------------------------------FOOTER*/
+footer{
+    text-align: center;
+    background-color: #524231;
+}
+
+.pie p{
+    margin-top: 10px;
+    color: #EBD6BE;
+    font-size: x-large;
+}
