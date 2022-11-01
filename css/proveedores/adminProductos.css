@@ -12,12 +12,8 @@
     float: none;
     clear: both;
 }
-/*
-body{
-    display: grid;
-    min-height: 100vh;
-}
-*/
+
+
 /*-----------------------------------------------------------------------------------------------MENU PRINCIPAL*/
 
 #menu{
@@ -126,44 +122,92 @@ body{
     color: #57350F;
 }
 
-
-/*-----------------------------------------------------------------------------------------------FILTROS*/
-.filtros{
-    min-height: 50px ;
-    margin: .5%;
+/*-----------------------------------------------------------------------------------------------LINEA*/
+#linea{
+    height: 40px;
+    background-color: #4F70C4;
 }
+/*-----------------------------------------------------------------------------------------------MAIN CONTAINER*/
 
-.campo{
-    margin-top: .2%;
+/*-----------------------------------------------------------------------------------------------AGREGAR PRODUCTO*/
+#informacion{
     display: block;
     float: left;
-    line-height: 250%;
-    font-size: large;
-    width: 250px;
+    margin: .2%;
+    margin-top: 1%;
+    margin-left: 5%;
+    width: 40%;
+    border: 1px solid #06397A;
+    min-height: 720px;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
 }
-.campo #date01, #date02, #state{
-    margin-left: .5%;
-    font-size: large;
+#datos{
+    text-align: center;
 }
-.campo #state{
-    width: 150px;
-    height: 30px;
+
+.datoCampoTitulo{
+    margin-right: 3%;
+    margin-top: 4%;
+    line-height: 200%;
+    background-color: #EBD6BE ;
+    border-radius: 10px;
 }
-#btn{
+
+.datoCampoContent{
+    margin-right: 3%;
+    margin-top: 2%;
+    width: 80%;
+}
+
+#btnAgregar{
+    border-top: 1px dashed #57350F;
+    padding-top: 2%;
+}
+
+/*-----------------------------------------------------------------------------------------------CONTRASEÑA*/
+#contraseña{
+    display: block;
+    margin: .8%;
+    margin-top: 1%;
+    float: left;
+    width: 50%;
+    border: 1px solid #06397A;
+    height:  350px;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
+}
+
+#formPass{
+    padding-top: 1%;
+    padding-left:3% ;
+}
+.campo{
+    margin-top: 1.5%;
+}
+.campo input{
+    margin-top: 1%;
+    width: 94%;
+}
+
+.btn{
     text-align: center;
     width: 95%;
     margin-top: 1.5%;
     margin-right: 3%;
 }
-#btn{
+.btn input{
     background-color: #D1AA7D;
     color: #57350F;
+    width: 100%;
     line-height: 200%;
     border-radius: 10px;
     border:1px solid #304478;
+    
+
 }
 
-#btn:hover {
+.btn:hover input {
     border:1px dashed #304478;
     background-color: #EBD6BE;
     color: white;
@@ -173,36 +217,36 @@ body{
     color: black;
     cursor:pointer;
 }
-/*-----------------------------------------------------------------------------------------------TABLA PRODUCTOS*/
-.tablaProductos{
+
+.mensaje{
     text-align: center;
     margin: auto;
-    margin-left:.2%;
-    margin-right:.2%;
-    height: 300px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    line-height: 250%;
+    width: 60%;
+    color:wheat;
+    
 }
-#tablaProductos{
+#fail{
+    background-color: #EB607E;
+}
+#success{
+    color: black;
+    background-color: #58dddd;
+    border-radius: 10px;
+}
+
+/*-----------------------------------------------------------------------------------------------INFORMACION PERSONAL + CONTRASEÑA*/
+.titulo{
+    color: white;
     text-align: center;
-    margin: auto;
-}
-.cabecera{
-    background-color: #D1AA7D;
-}
-.cabecera td{
+    background-color: #57350F;
     line-height: 200%;
-    width: 100vh;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
-.filas td{
-    font-size: large;
-    line-height: 400%;
-    border-bottom: 1px dashed #524231;
-}
-#icon {
-    padding-top: 1%;
-}
-#icon svg{
-    padding-left: 3%;
-}
+
 /*-----------------------------------------------------------------------------------------------FOOTER*/
 footer{
     text-align: center;

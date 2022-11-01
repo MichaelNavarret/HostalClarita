@@ -27,7 +27,14 @@ function verificarRut(){
     }
 }
 
-/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL CHECK*/
+/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS LISTAR PRODUCTOS*/
+function eliminarProducto(){
+    return confirm("¿Está seguro que desea eliminar el producto?");
+}
+
+function editarProducto(){
+    return confirm("¿Está seguro que desea actualizar el producto?");
+}
 
 
 /*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL OPERADOR/PROVEEDORES*/
