@@ -101,21 +101,21 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// Contraseña -->
             <section id ="contraseña">
                 <h2 class ="titulo" >Actualice su contraseña</h2>
-                <form action="" method="post" name ="formPass" id = "formPass">
+                <form action="" method="post" name ="formPass" id = "formPass" >
                     <div class="campo">
                         <label for="">Introduzca contraseña actual: </label>
                         <br>
-                        <input type="password" name ="oldPass" id ="oldPass">
+                        <input type="password" name ="oldPass" id ="oldPass" required>
                     </div>
                     <div class="campo">
                         <label for="">Introduzca contraseña nueva: </label>
                         <br>
-                        <input type="password" name ="newPass1" id ="newPass1">
+                        <input type="password" name ="newPass1" id ="newPass1" required  minlength = 12 maxlength = 30>
                     </div>
                     <div class="campo">
                         <label for="">Vuelva a introducir contraseña nueva: </label>
                         <br>
-                        <input type="password" name ="newPass2" id ="newPass2">
+                        <input type="password" name ="newPass2" id ="newPass2" required minlength = 12 maxlength = 30>
                     </div>
                     
                     <div id ="btn" >
