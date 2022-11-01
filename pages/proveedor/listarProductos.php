@@ -25,15 +25,14 @@
                     <li>
                         <a href="#"> Orden de compra </a>
                         <ul>
-                            <li><a href="listarOrdenes.php">Listar Ordebes</a></li>
-                            <li><a href="buscarOrden.php">Buscar orden</a></li>                           
+                            <li><a href="listarOrdenes.php">Listar ordenes</a></li>                        
                         </ul>
                     </li>
                     <li>
                     <a href="#"> Inventario </a>
                         <ul>
                             <li><a href="listarProductos.php">Listar Productos</a></li>
-                            <li><a href="adminProductos.php">Administrar Productos</a></li>                           
+                            <li><a href="adminProductos.php">Agregar Productos</a></li>                           
                         </ul>
                     </li>
                 </ul>
@@ -55,6 +54,13 @@
                     <input type="submit" value="Listar productos con bajo stock" name="btn" id="btn">
                 </div>
             </form>
+            <div class ="iconPlus">
+                <a id ="agregar" href="adminProductos.php">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="white" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
 <!--/////////////////////////////////////////////-TABLA PRODUCTOS-/////////////////////////////////////////////////////////  -->
         <div class ="tablaProductos" >

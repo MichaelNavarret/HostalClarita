@@ -25,15 +25,14 @@
                     <li>
                         <a href="#"> Orden de compra </a>
                         <ul>
-                            <li><a href="listarOrdenes.php">Listar ordenes</a></li>
-                            <li><a href="buscarOrden.php">Buscar orden</a></li>                           
+                            <li><a href="listarOrdenes.php">Listar ordenes</a></li>                         
                         </ul>
                     </li>
                     <li>
                     <a href="#"> Inventario </a>
                         <ul>
-                            <li><a href="listarProductos.php">Listar Productos</a></li>
-                            <li><a href="adminProductos.php">Administrar Productos</a></li>                           
+                            <li><a href="listarProductos.php">Listar productos</a></li>
+                            <li><a href="adminProductos.php">Agregar producto</a></li>                           
                         </ul>
                     </li>
                 </ul>
@@ -63,13 +62,14 @@
 <!--/////////////////////////////////////////////-TABLA DETALLE PRODUCTO-/////////////////////////////////////////////////////////  -->
         <div class="infoPedido">
             <?php
+                $codigo = $_GET['codigo'];
                 if(isset($_POST['btn'])){
                     $id = $_POST["idNum"];
                     $consultaInfo = "SELECT	OPP.idOrdenPedido ORDEN,
                                             OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat OPERADOR,
                                             CONVERT(VARCHAR, OP.fechaGenOrden, 111) FECHA,
                                             OP.detalle DETALLE,
-                                            OP.estado ESTADO
+                                            OP.estado ESTADO 
                                     FROM OrdenPedido_Producto AS OPP
                                     JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
                                     JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
@@ -82,20 +82,41 @@
                                                 OP.estado ;";
                     $ejecutar = sqlsrv_query($conn, $consultaInfo);
                     $i=0;
-                    while($info=sqlsrv_fetch_array($ejecutar)){
-                        $codigo = $info['ORDEN'];
-                        $operador = $info['OPERADOR'];
-                        $fecha = $info['FECHA'];
-                        $detail = $info['DETALLE'];
                     
-                    ?>
-                    <h3>Información Pedido</h3>
-                    <p> Codigo de la Orden:  <?php echo($codigo); ?> </p>
-                    <p> Operador solicitante:  <?php echo($operador); ?> </p>
-                    <p> Fecha de Generacion:  <?php echo($fecha); ?> </p>
-                    <p id="final"> Detalle de la Orden:  <?php echo($detail); ?> </p>
-                    <?php
-                    }
+                }else{
+                    $consultaInfo = "SELECT	OPP.idOrdenPedido ORDEN,
+                                            OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat OPERADOR,
+                                            CONVERT(VARCHAR, OP.fechaGenOrden, 111) FECHA,
+                                            OP.detalle DETALLE,
+                                            OP.estado ESTADO
+                                    FROM OrdenPedido_Producto AS OPP
+                                    JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
+                                    JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
+                                    JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
+                                    WHERE OPP.idOrdenPedido = $codigo AND PR.rutProveedor = '128723132'
+                                    GROUP BY	OPP.idOrdenPedido ,
+                                                OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat ,
+                                                CONVERT(VARCHAR, OP.fechaGenOrden, 111) ,
+                                                OP.detalle ,
+                                                OP.estado ;";
+                    $ejecutar = sqlsrv_query($conn, $consultaInfo);
+                    $i=0;
+                }
+                while($info=sqlsrv_fetch_array($ejecutar)){
+                    $codigo = $info['ORDEN'];
+                    $operador = $info['OPERADOR'];
+                    $fecha = $info['FECHA'];
+                    $detail = $info['DETALLE'];
+                    $estado = $info['ESTADO'];
+                
+                ?>
+                <h3>Información Pedido</h3>
+                <p> Codigo de la Orden:  <?php echo($codigo); ?> </p>
+                <p> Operador solicitante:  <?php echo($operador); ?> </p>
+                <p> Fecha de Generacion:  <?php echo($fecha); ?> </p>
+                <p> Estado de la orden:  <?php echo($estado); ?> </p>
+                <p id="final"> Detalle de la Orden:  <?php echo($detail); ?> </p>
+                <?php
                 }
             ?>
         </div>
@@ -145,7 +166,51 @@
                 </td>
             <?php
                     }
+                }else{
+            ?>        
+                    <table>
+                <tr class="cabecera">
+                    <td>Código Producto</td>
+                    <td>Nombre Producto</td>
+                    <td>Valor Unitario</td>
+                    <td>Familia</td>
+                    <td>Cantidad</td>
+                    <td>Valor Total</td>
+                </td>
+            <?php
+                    $id = $_GET["codigo"];
+                    $consultaProductos = "SELECT	PR.idProducto CODIGO,
+                                                    PR.nombre NOMBRE,
+                                                    FORMAT(PR.valor,'$ ### ###') VALOR_UNITARIO,
+                                                    PR.familia FAMILIA,
+                                                    OPP.cantidad CANTIDAD,
+                                                    FORMAT((PR.valor*OPP.cantidad), '$ ### ###') VALOR_TOTAL
+                                            FROM OrdenPedido_Producto AS OPP
+                                            JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
+                                            JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
+                                            JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
+                                            WHERE OPP.idOrdenPedido = $id AND PR.rutProveedor = '128723132';";
+                    $ejecutar = sqlsrv_query($conn, $consultaProductos);
+                    $i=0;
+                    while($info=sqlsrv_fetch_array($ejecutar)){
+                        $codigo = $info['CODIGO'];
+                        $nombre = $info['NOMBRE'];
+                        $valorUn = $info['VALOR_UNITARIO'];
+                        $familia = $info['FAMILIA'];
+                        $cant = $info['CANTIDAD'];
+                        $valorTo = $info['VALOR_TOTAL'];
+            ?>
+                <tr class ="filas" >
+                    <td><?php echo($codigo);?></td>
+                    <td><?php echo($nombre);?></td>
+                    <td><?php echo($valorUn);?></td>
+                    <td><?php echo($familia);?></td>
+                    <td><?php echo($cant);?></td>
+                    <td><?php echo($valorTo);?></td>
+                </td>
+            <?php
                 }
+            }
             ?>
             </table>
         </div>

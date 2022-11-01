@@ -25,8 +25,7 @@
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>
-                        <li><a href="buscarOrden.php">Buscar orden</a></li>                           
+                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>                       
                     </ul>
                 </li>
                 <li>
@@ -119,20 +118,7 @@
                         <input type="submit" value="Actualizar Producto" id="update" name="update" onclick="return editarProducto()">
                     </div>
                 </ul>
-                <?php
-                    /*if(isset($_POST['update'])){
-                        global $codigo;
-                        $n_valor =$_POST["valorPro"];
-                        $n_stock =$_POST["stockPro"];
-                        $consulta = "   UPDATE Producto
-                                        SET valor = $n_valor, 
-                                            stock = $n_stock
-                                        WHERE idProducto = '$codigo';";
-                        $ejecutar = sqlsrv_query($conn, $consulta);
-                        header("Location: listarProductos.php");
-                    }
-
-                */?>
+                
             </form>
         </div>
     <div class="clearFix"></div>

@@ -173,6 +173,31 @@ body{
     color: black;
     cursor:pointer;
 }
+
+.iconPlus{
+    text-align: center;
+    margin-top: .5%;
+    display: block;
+    float: right;
+    margin-right: 2%;
+    width: 5%;
+    background-color: #41975a;
+    border-radius: 8px;
+    border:1px solid black;
+    
+}
+.iconPlus a{
+    width: 100%;
+}
+.iconPlus a svg{
+    width: 100%;
+    
+}
+
+.iconPlus:hover{
+    background-color: #99b6d1;
+}
+
 /*-----------------------------------------------------------------------------------------------TABLA PRODUCTOS*/
 .tablaProductos{
     text-align: center;

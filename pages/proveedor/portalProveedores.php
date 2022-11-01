@@ -25,8 +25,7 @@
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>
-                        <li><a href="buscarOrden.php">Buscar orden</a></li>                           
+                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>                         
                     </ul>
                 </li>
                 <li>
