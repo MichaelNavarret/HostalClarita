@@ -131,11 +131,8 @@
 
 /*-----------------------------------------------------------------------------------------------AGREGAR PRODUCTO*/
 #informacion{
-    display: block;
-    float: left;
-    margin: .2%;
+    margin: auto;
     margin-top: 1%;
-    margin-left: 5%;
     width: 40%;
     border: 1px solid #06397A;
     min-height: 720px;
@@ -161,35 +158,10 @@
 }
 
 #btnAgregar{
-    border-top: 1px dashed #57350F;
     padding-top: 2%;
 }
 
-/*-----------------------------------------------------------------------------------------------CONTRASEÑA*/
-#contraseña{
-    display: block;
-    margin: .8%;
-    margin-top: 1%;
-    float: left;
-    width: 50%;
-    border: 1px solid #06397A;
-    height:  350px;
-    box-shadow: 5px 5px #cecece;
-    border-radius: 10px;
-}
-
-#formPass{
-    padding-top: 1%;
-    padding-left:3% ;
-}
-.campo{
-    margin-top: 1.5%;
-}
-.campo input{
-    margin-top: 1%;
-    width: 94%;
-}
-
+/*BOTON*/
 .btn{
     text-align: center;
     width: 95%;

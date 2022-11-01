@@ -25,15 +25,14 @@
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>
-                        <li><a href="buscarOrden.php">Buscar orden</a></li>                           
+                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>                        
                     </ul>
                 </li>
                 <li>
                 <a href="#"> Inventario </a>
                     <ul>
-                        <li><a href="listarProductos.php">Listar Productos</a></li>
-                        <li><a href="adminProductos.php">Administrar Productos</a></li>                           
+                        <li><a href="listarProductos.php">Listar productos</a></li>
+                        <li><a href="adminProductos.php">Agregar producto</a></li>                           
                     </ul>
                 </li>
             </ul>
@@ -52,19 +51,26 @@
         <div class ="mainContainer">
             <section id ="informacion">
                 <h2 class ="titulo" >Agregar Producto</h2>
-                <form action="" method = "post" >
+                <form action="agregar.php" method = "post" >
                     <ul id ="datos" >
                         <li>
                             <div class ="datoCampo" >
+                                <h4 class ="datoCampoTitulo"><strong>Codigo</strong> </h4>
+                                <input class ="datoCampoContent" type="text" name="codePro" id="codePro" required minlength=18 maxlength=18>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <div class ="datoCampo" >
                                 <h4 class ="datoCampoTitulo"><strong>Nombre</strong> </h4>
-                                <input class ="datoCampoContent" type="text" name="namePro" id="namePro" required>
+                                <input class ="datoCampoContent" type="text" name="namePro" id="namePro"  maxlength=30>
                             </div>
                             
                         </li>
                         <li>
                             <div class ="datoCampo" >
                                 <h4 class ="datoCampoTitulo"><strong>Valor</strong> </h4>
-                                <input class ="datoCampoContent" type="number" name="valorPro" id="valorPro" required>
+                                <input class ="datoCampoContent" type="number" name="valorPro" id="valorPro" required min=0 >
                             </div>    
                         </li>
                         <li>
@@ -76,7 +82,7 @@
                         <li>
                             <div class ="datoCampo" >
                                 <h4 class ="datoCampoTitulo"><strong>Fecha Vencimiento</strong> </h4>
-                                <input class ="datoCampoContent" type="date" name="datePro" id="datePro" >
+                                <input class ="datoCampoContent" type="date" name="datePro" id="datePro"  min="<?php echo(date("Y").'-'.date("m").'-'.date("d")); ?>">
                             </div>    
                         </li>
                         <li>
@@ -86,75 +92,17 @@
                             </div>    
                         </li>
                         <li>
-                            <div class ="datoCampo" >
-                                <h4 class ="datoCampoTitulo"><strong>Contraseña</strong> </h4>
-                                <input class ="datoCampoContent" type="pass" name="contraPro" id="contraPro" required>
-                            </div>    
-                        </li>
-                        <li>
                             <div class ="btn" id="btnAgregar" >
                                 <input type="submit" name="agregar" id="agregar" value ="Agregar Producto">
                             </div>    
                         </li>
                     </ul>
                 </form>
-            </section>
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////// ELIMINAR PRODUCTO -->
-            <section id ="contraseña">
-                <h2 class ="titulo" >Eliminar Producto</h2>
-                <form action="" method="post" name ="formPass" id = "formPass">
-                    <div class="campo">
-                        <label for="">ID Producto </label>
-                        <br>
-                        <input type="text" name ="idPro" id ="idPro" required>
-                    </div>
-                    <div class="campo">
-                        <label for="">Contraseña </label>
-                        <br>
-                        <input type="password" name ="pass1" id ="pass1" required>
-                    </div>
-                    <div class="campo">
-                        <label for="">Vuelva a introducir contraseña </label>
-                        <br>
-                        <input type="password" name ="pass2" id ="pass2" required>
-                    </div>
-                    
-                    <div class ="btn" >
-                        <input type="submit" name ="delete" id ="delete" value ="Eliminar producto">
-                    </div>              
-                </form>
-            </section>
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////// EDITAR STOCK -->
-            <section id ="contraseña">
-                <h2 class ="titulo" >Editar stock producto</h2>
-                <form action="" method="post" name ="formPass" id = "formPass">
-                    <div class="campo">
-                        <label for="">Introduzca contraseña actual: </label>
-                        <br>
-                        <input type="password" name ="oldPass" id ="oldPass">
-                    </div>
-                    <div class="campo">
-                        <label for="">Introduzca contraseña nueva: </label>
-                        <br>
-                        <input type="password" name ="newPass1" id ="newPass1">
-                    </div>
-                    <div class="campo">
-                        <label for="">Vuelva a introducir contraseña nueva: </label>
-                        <br>
-                        <input type="password" name ="newPass2" id ="newPass2">
-                    </div>
-                    
-                    <div class ="btn" >
-                        <input type="submit" name ="btnUpdate" id ="btnUpdate" value ="Actualizar Contraseña">
-                    </div>
-                    
-                </form>
-            </section>
-        </div>
+                <?php
 
-        
-    </div>
-    <div class="clearFix"></div>
+                ?>
+            </section>
+
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// FOOTER -->
    <!-- 
     <footer>
