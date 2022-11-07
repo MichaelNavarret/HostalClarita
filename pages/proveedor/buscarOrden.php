@@ -135,7 +135,7 @@
                 </td>
             <?php
                     $id = $_POST["idNum"];
-                    $consultaProductos = "SELECT	PR.idProducto CODIGO,
+                    $consultaProductos = "SELECT	PR.codigo CODIGO,
                                                     PR.nombre NOMBRE,
                                                     FORMAT(PR.valor,'$ ### ###') VALOR_UNITARIO,
                                                     PR.familia FAMILIA,
@@ -179,7 +179,7 @@
                 </td>
             <?php
                     $id = $_GET["codigo"];
-                    $consultaProductos = "SELECT	PR.idProducto CODIGO,
+                    $consultaProductos = "SELECT	PR.codigo CODIGO,
                                                     PR.nombre NOMBRE,
                                                     FORMAT(PR.valor,'$ ### ###') VALOR_UNITARIO,
                                                     PR.familia FAMILIA,

@@ -10,7 +10,7 @@
     $consulta = "   UPDATE Producto
                     SET valor = $n_valor, 
                         stock = $n_stock
-                    WHERE idProducto = '$codigo';";
+                    WHERE codigo = '$codigo';";
     $ejecutar = sqlsrv_query($conn, $consulta);
     header("Location: listarProductos.php");
 ?>

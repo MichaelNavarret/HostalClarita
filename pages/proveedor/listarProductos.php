@@ -75,7 +75,7 @@
                     <td><strong> EDITAR </strong></td>
             <?php
                 if(isset($_POST['btn'])){
-                    $consulta = "SELECT	idProducto Id, 
+                    $consulta = "SELECT	codigo Id, 
                                         UPPER(nombre) Nombre,
                                         FORMAT(valor,'$ ### ###') Valor,
                                         familia Familia,
@@ -88,7 +88,7 @@
                                 WHERE rutProveedor = '128723132' AND stock < 4;";
                     
                 }else{
-                    $consulta =         "SELECT	idProducto Id, 
+                    $consulta =         "SELECT	codigo Id, 
                                                 UPPER(nombre) Nombre,
                                                 FORMAT(valor,'$ ### ###') Valor,
                                                 familia Familia,

@@ -43,7 +43,7 @@
         <div class="clearFix"></div>
 
         <div id ="miniBanner">
-            <h2>Administrar Productos </h2>
+            <h2>Agregar Productos </h2>
         </div>
         <div class="clearFix"></div>
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// CONTENIDO PRINCIPAL -->
@@ -53,13 +53,6 @@
                 <h2 class ="titulo" >Agregar Producto</h2>
                 <form action="agregar.php" method = "post" >
                     <ul id ="datos" >
-                        <li>
-                            <div class ="datoCampo" >
-                                <h4 class ="datoCampoTitulo"><strong>Codigo</strong> </h4>
-                                <input class ="datoCampoContent" type="text" name="codePro" id="codePro" required minlength=18 maxlength=18>
-                            </div>
-                            
-                        </li>
                         <li>
                             <div class ="datoCampo" >
                                 <h4 class ="datoCampoTitulo"><strong>Nombre</strong> </h4>

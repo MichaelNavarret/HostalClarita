@@ -55,14 +55,14 @@
                 <?php
                     include('../../php/connection.php');
                     $codigo = $_GET['codigo'];
-                    $consulta = "SELECT	idProducto ID,
+                    $consulta = "SELECT	codigo ID,
                                         nombre NOMBRE,
                                         FORMAT(valor, '######') VALOR,
                                         familia FAMILIA,
                                         CONVERT(VARCHAR,fechaVencimiento,105) FECHA,
                                         stock STOCK
                                 FROM Producto
-                                WHERE idProducto = '$codigo';";
+                                WHERE codigo = '$codigo';";
                     $ejecutar = sqlsrv_query($conn,$consulta);
                     while($fila = sqlsrv_fetch_array($ejecutar)){
                         $id = $fila["ID"];
@@ -78,7 +78,7 @@
                 <ul id ="datos" >
                     <li>
                         <div class ="datoCampo" >
-                            <h4 class ="datoCampoTitulo"><strong>ID Producto</strong> </h4>
+                            <h4 class ="datoCampoTitulo"><strong>Codigo Producto</strong> </h4>
                             <p class ="datoCampoContent"><?php echo($id); ?></p>
                         </div>
                          
