@@ -22,6 +22,12 @@
     if($i != 0){
         if($pass == $clave){
             header("Location: ../pages/cliente/inicioCliente.php?usuario=$user");
+        }else{
+            $mensaje="La contraseña ingresada no coincide con el usuario ingresado.";
+            header("Location: ../login.php?mensaje=$mensaje");
         }
+    }else{
+        $mensaje="El usuario ingresado no existe en nuestros registros.";
+        header("Location: ../login.php?mensaje=$mensaje");
     }
 ?>

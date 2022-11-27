@@ -1,5 +1,27 @@
 <?php
-    $usuario = $_GET["usuario"];
+    $costoIndividual = '64.900 CLP';
+    $costoGrupal = '110.000 CLP';
+
+    if(isset($_POST["money"])){
+        $usuario = $_GET["usuario"];
+        $idMoney = $_POST["idMoney"];
+        switch ($idMoney){
+            case 1:
+                $costoIndividual = '64.900 CLP';
+                $costoGrupal = '110.000 CLP';
+                break;
+            case 2:
+                $costoIndividual = '70,37 USD';
+                $costoGrupal = '119,28 USD';
+                break;
+            case 3:
+                $costoIndividual = '68,62 EUR';
+                $costoGrupal = '116,31 EUR';
+                break;
+        }
+    }else{
+        $usuario = $_GET["usuario"];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +45,7 @@
     <link type="text/css" rel="stylesheet" href="CSS/servicios.css">
     <link rel="icon" href="img/dona.ico">
     <link rel="stylesheet" href="icon.css">
+    
 
 
 </head>
@@ -41,7 +64,15 @@
 
     </section>
 
-
+    <form action="" method ="POST">
+        <select name="idMoney" id="idMoney">
+            <option value="1">CLP</option>
+            <option value="2">USD</option>
+            <option value="3">EUR</option>
+        </select>
+        <input type="submit" Value="Cambiar Moneda" name ="money" id ="money">
+    </form>
+    <br>
 
     <div class="banner">
         <div class="slider">
@@ -70,10 +101,12 @@
                     setTimeout('slider()', 4000)
                 }
             </script>
-
+            <div class="explicacion" style ="color: white;">
+                <h1>Seleccione su opción de reserva</h1>
+                <p>Seleccione una de las opciones de reserva que se muestran a continuación. Posteriormente, será redireccionado al formulario para rellenar con sus datos. </p>
+                <p>En caso de querer cambiar el tipo de moneda. en la parte superior de este mensaje, podrá seleccionar la divisa que prefiera entre CLP, USD y EUR</p>
+            </div>
             <div class="casilla">
-
-
                 <form class="card" action = "formulario.php" >
                     <div class="card-image"></div>
                     <div class="card-text">
@@ -84,7 +117,7 @@
                         <div class="stat">
                             <input type="hidden" name="tipo" id="tipo" value="1">
                             <input type="hidden" name="usuario" id="usuario" value="<?php echo($usuario) ?>">
-                            <div class="value"><input type="submit" value="Reservar $64.990" id ="reservaIndividual" name ="reservaIndividual"></div>
+                            <div class="value"><input type="submit" value="<?php echo($costoIndividual) ?>" id ="reservaIndividual" name ="reserva"></div>
                         </div>
                     </div>
                 </form>
@@ -99,12 +132,12 @@
                         <div class="stat">
                             <input type="hidden" name="tipo" id="tipo" value="2">
                             <input type="hidden" name="usuario" id="usuario" value="<?php echo($usuario) ?>">
-                            <div class="value"><input type="submit" value="Reservar $110.000" id ="reservaGrupal" name ="reservaGrupal"></div>
+                            <div class="value"><input type="submit" value="<?php echo($costoGrupal) ?>" id ="reservaGrupal" name ="reserva"></div>
                         </div>
 
                     </div>
                 </form>
-                <form class="card">
+                <div class="card">
                     <div class="card-image card3"></div>
                     <div class="card-text card3">
                         <h2>Comedor</h2>
@@ -115,13 +148,88 @@
                             <input type="hidden" name="usuario" id="usuario" value="<?php echo($usuario) ?>">
                             <div class="value"><input type="submit" value="Consultar Horarios" id ="verHorario" name ="verHorario"></div>
                         </div>
-
+                    
                     </div>
-                </form>
+                    <dialog id="consultarComedor">
+                        
+                        <h2>Horarios y Minuta de comedor</h2>
+                        <div class="horarios">
+                            <div class="campo"> 
+                                <label for="" class="comida">Desayuno</label><br>
+                                <label for="" class="horario">8:00 a.m -- 10:00 a.m</label>
+                            </div>
+                            <div class="campo"> 
+                                <label for="" class="comida">Almuerzo</label><br>
+                                <label for="" class="horario">12:00 p.m -- 14:00 p.m</label>
+                            </div>
+                            <div class="campo"> 
+                                <label for="" class="comida">Once</label><br>
+                                <label for="" class="horario">16:00 p.m -- 18:00 p.m</label>
+                            </div>
+                            <div class="campo"> 
+                                <label for="" class="comida">Cena</label><br>
+                                <label for="" class="horario">20:00 p.m -- 22:00 p.m</label>
+                            </div>
+                        </div>
+                        <table class="minuta">
+                            <tr class="cabecera">
+                                <td>Menú</td>
+                                <td>Lunes</td>
+                                <td>Martes</td>
+                                <td>Miercoles</td>
+                                <td>Jueves</td>
+                                <td>Viernes</td>
+                                <td>Sábado</td>
+                                <td>Domingo</td>
+                            </tr>
+                            <tr class="Contenido">
+                                <td id="first">Desayuno</td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                            </tr>
+                            <tr class="Contenido">
+                                <td id="first">Almuerzo</td>
+                                <td>Puré + Acompañamiento</td>
+                                <td>Arroz + Acompañamiento </td>
+                                <td>Fideos + Acompañamiento</td>
+                                <td>Cazuela / Porotos</td>
+                                <td>Pastel de papa</td>
+                                <td>Carbonada</td>
+                                <td>Papas fritas + Acompañamiento</td>
+                            </tr>
+                            <tr class="Contenido">
+                                <td id="first">Once</td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                                <td>Café/Té + Sandiwch </td>
+                            </tr>
+                            <tr class="Contenido">
+                                <td id="first">Cena</td>
+                                <td>Puré + Acompañamiento</td>
+                                <td>Arroz + Acompañamiento </td>
+                                <td>Fideos + Acompañamiento</td>
+                                <td>Cazuela / Porotos</td>
+                                <td>Pastel de papa</td>
+                                <td>Carbonada</td>
+                                <td>Papas fritas + Acompañamiento</td>
+                            </tr>
+                        </table>
+                        <button id="cerrar">Cerrar</button>
+                    </dialog>
+                </div>
             </div>
         </div>
     </div>
 
 </body>
-
+<script src="js/scripts.js"></script>
 </html>

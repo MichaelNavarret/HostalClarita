@@ -3,11 +3,7 @@
     $reserva = $_GET["reserva"];
     $usuario = $_GET["usuario"];
     $recibo = $_GET["recibo"];
-    if($tipo == 1){
-        $total = 64990;
-    }else{
-        $total = 110000;
-    }
+    $monto = $_GET["monto"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -160,7 +156,7 @@
                                     <input type="hidden" name="usuario" value = "<?php echo($usuario); ?>" id ="usuario">
                                     <input type="hidden" name="idReserva" value = "<?php echo($reserva); ?>" id ="idReserva">
                                     <input type="hidden" name="tipoReserva" value = "<?php echo($tipo); ?>" id ="idReserva">
-                                    <input type="submit" value="<?php echo("Pagar: $" . $total) ?>" class="submit-btn">
+                                    <input type="submit" value="<?php echo("Pagar: " . $monto) ?>" class="submit-btn">
                             </form>
 
                         <?php
@@ -229,7 +225,7 @@
                                 </div>
                                 <input type="hidden" name="usuario" value = "<?php echo($usuario); ?>" id ="usuario">
                                 <input type="hidden" name="idReserva" value = "<?php echo($reserva); ?>" id ="idReserva">
-                                <input type="submit" value="<?php echo("Pagar: $" . $total) ?>" class="submit-btn">
+                                <input type="submit" value="<?php echo("Pagar: $" . $monto) ?>" class="submit-btn">
                             </form>
                         <?php
                     }

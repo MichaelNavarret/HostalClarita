@@ -138,10 +138,9 @@ body{
 #informacion{
     margin: auto;
     margin-top: 1%;
-    width: 40%;
-    border: 1px solid #7a0606;
+    width: 1600px;
     min-height: 700px;
-    box-shadow: 5px 5px #cecece;
+    box-shadow: 1px 1px 10px #cecece;
     border-radius: 10px;
     padding: 1%;
 }

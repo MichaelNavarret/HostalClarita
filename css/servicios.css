@@ -210,3 +210,163 @@
 .card-stats.card3 {
     background: rgb(0, 189, 63);
 }
+
+/*POP UP*/
+
+.slider {
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+#slideImg {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    z-index: 1;
+    width: 100%;
+    height: 140vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    position: absolute;
+    top: 0;
+}
+
+
+/* VENTANA MODAL */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.texto {
+margin: 30px auto;
+width: 80%;
+}
+
+.texto p,
+h1 {
+margin-bottom: 30px;
+}
+
+.texto p {
+font-size: 20px;
+}
+
+.btn-abrir {
+background: #0f2453;
+color: #fff;
+padding: 10px;
+display: inline-block;
+border: none;
+cursor: pointer;
+}
+
+
+/* VENTANA MODAL */
+
+.pop-up {
+background: rgba(48, 48, 48, 0.5);
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+visibility: hidden;
+z-index: 2;
+}
+
+.pop-up-wrap {
+display: flex;
+align-items: center;
+width: 50%;
+max-width: 350px;
+transform: scale(0.6);
+opacity: 0;
+transition: .3s ease all;
+}
+
+.subcription::before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+z-index: -1;
+}
+
+.pop-up-title h2,
+.pop-up-title p {
+z-index: 10;
+color: #fff;
+}
+
+.pop-up-title h2 {
+font-family: 'Chiller';
+font-size: 80px;
+}
+
+.pop-up-title p {
+font-size: 20px;
+font-weight: 300;
+}
+
+.subcription {
+background: #fff;
+flex-basis: 0;
+flex-grow: 2;
+height: 250px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+position: relative;
+text-align: center;
+}
+
+.line {
+width: 100%;
+height: 20px;
+background: #1F4068;
+}
+
+#close {
+position: absolute;
+top: 40px;
+right: 25px;
+font-size: 25px;
+color: #1bc59b;
+cursor: pointer;
+}
+
+.pop-up.show {
+visibility: visible;
+}
+
+.pop-up-wrap.show {
+transform: scale(1);
+opacity: 1;
+}
+
+@media only screen and (max-width: 980px) {
+.pop-up-title {
+display: none;
+}
+}
+
+@media only screen and (max-width: 320px) {
+.sub-content h2 {
+font-size: 30px;
+}
+}

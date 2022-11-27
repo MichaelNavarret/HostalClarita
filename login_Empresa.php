@@ -31,19 +31,30 @@
 
                     <div class="input-contenedor">
                         <i class="fas fa-envelope icon"></i>
-                        <input type="text" placeholder="Rut" name="uname" id="uname">
+                        <input type="text" placeholder="Rut" name="uname" id="uname" maxlength="9" required>
 
                     </div>
 
                     <div class="input-contenedor">
                         <i class="fas fa-key icon"></i>
-                        <input type="password" placeholder="Contraseña" name="psw" id="psw">
+                        <input type="password" placeholder="Contraseña" name="psw" id="psw" required>
 
 
                     </div>
                     <input type="submit" value="Ingresar" class="button" id ="ingresar" name ="ingresar">
                     <br><hr>
                     <a href="login.php">Regresar a login Cliente</a>
+                    <br>
+                    <?php
+                        if($_GET){
+                            $mensaje = $_GET["mensaje"];
+                            ?>
+                            <div class="men">
+                                <p style ="color:red;"><?php echo($mensaje); ?></p>
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </form>
     </div>

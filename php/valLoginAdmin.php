@@ -20,12 +20,13 @@
     if($i != 0){ //Valida que el usuario exista
         if($clave == $psw){ //Valida que coincida con su contraseña.
             if($tipo == 'PRO'){ //Valida si es Proveedor u Operador.
-                header("Location: ../pages/proveedor/portalProveedores.php?rutProveedor=$rut");
+                $mensaje="Este no es el portal por donde se debe acceder con este tipo de cuenta. Dirigase a <a href='login_Empresa.php'> aquí </a>";
+                header("Location: ../loginAdministrador.php?mensaje=$mensaje");
             }else if ($tipo == 'ADM'){
-                $mensaje="No cuenta con los permisos necesarios para acceder a esta cuenta.";
-                header("Location: ../login_Empresa.php?mensaje=$mensaje");
+                header("Location: ../pages/administrador/portalAdministrador.php?rutAdministrador=$rut");
             }else{
-                header("Location: ../pages/operadorHostal/portalOperador.php?rutOperador=$rut");
+                $mensaje="Este no es el portal por donde se debe acceder con este tipo de cuenta. Dirigase a <a href='login_Empresa.php'> aquí </a>";
+                header("Location: ../loginAdministrador.php?mensaje=$mensaje");
             }
         }else{
             $mensaje="La contraseña ingresada no coincide con el usuario ingresado.";

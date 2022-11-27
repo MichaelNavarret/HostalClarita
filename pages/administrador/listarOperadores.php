@@ -60,19 +60,19 @@
                     <p>Porfavor, evitar "ñ" y "tildes". Esto podria ocasionar que no se realice la insersión.</p>
                         <div class="campo">
                             <label for="">Rut Operador </label><br>
-                            <input type="text" name="idOpe" id="idOpe" required>
+                            <input type="text" name="idOpe" id="idOpe" required maxlength="9">
                         </div>
                         <div class="campo">
                             <label for="">Nombre </label><br>
-                            <input type="text" name="nombre" id="nombre" >
+                            <input type="text" name="nombre" id="nombre" maxlength="30">
                         </div>
                         <div class="campo">
                             <label for="">Apellido Paterno </label><br>
-                            <input type="text" name="apellidoPat" id="apellidoPat"  required>
+                            <input type="text" name="apellidoPat" id="apellidoPat"  required maxlength="30"> 
                         </div>
                         <div class="campo">
                             <label for="">Apellido Materno </label><br>
-                            <input type="text" name="apellidoMat" id="apellidoMat"  required>
+                            <input type="text" name="apellidoMat" id="apellidoMat"  required maxlength="30">
                         </div>
                         <div class="campo">
                             <label for="">Fecha Nacimiento </label><br>
@@ -84,11 +84,11 @@
                         </div>
                         <div class="campo">
                             <label for="">Correo </label><br>
-                            <input type="text" name="correo" id="correo"  required>
+                            <input type="text" name="correo" id="correo"  required maxlength="50"> 
                         </div>
                         <div class="campo">
                             <label for="">Telefono </label><br>
-                            <input type="text" name="telefono" id="telefono"  required>
+                            <input type="number" name="telefono" id="telefono"  required max="9">
                         </div>
                         <div class="campo">
                             <label for="">Contraseña </label><br>

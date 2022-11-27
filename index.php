@@ -20,6 +20,9 @@
     <link rel="icon" href="img/dona.ico">
     <link rel="stylesheet" href="icon.css">
 
+    <!-- MODAL SERGIO -->
+    <script src="https://kit.fontawesome.com/cd33816f91.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
 
 </head>
 
@@ -33,9 +36,28 @@
             <li><a href="pages/cliente/contacto.php">CONTACTO</a></li>
             <li><a href="pages/cliente/clientes.php">NOSOTROS</a></li>
             <li><img class="imgabe" src="img/dona.png"></li>
+            <input type="button" value="Ayuda" class="btn-abrir">
         </ul>
 
     </section>
+
+    <!-- MODAL SERGIO -->
+    <div class="pop-up">
+        <div class="pop-up-wrap">
+            <div class="subcription">
+                <div class="line"></div>
+                <i class="far fa-times-circle" id="close"></i>
+                <div class="sub-content">
+                    <h2>Reservar una habitación</h2>
+                    <br>
+                    <p>Para reservar una habitación dirígete hacia el botón ingresar e inicia sesión.
+                    </p>
+                </div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="banner">
         <div class="slider">
@@ -172,113 +194,25 @@
 
             <!-- //gallery -->
             <!-- rooms & rates -->
-            <div class="plans-section" id="rooms">
-                <div class="container">
-                    <h3 class="title-w3-agileits title-black-wthree">Habitaciones y Tarifas
-                    </h3>
-                    <div class="priceing-table-main">
-                        <div class="col-md-3 price-grid">
-                            <div class="price-block agile">
-                                <div class="price-gd-top">
-                                    <img src="img/r1.jpg" alt=" " class="img-responsive" />
-                                    <h4>Habitación Simple</h4>
-                                </div>
-                                <div class="price-gd-bottom">
-                                    <div class="price-list">
-                                        <ul>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="price-selet">
-                                        <h3><span>$</span>64.990</h3>
-                                        <a href="Login.html"> Reservar ahora</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 price-grid ">
-                            <div class="price-block agile">
-                                <div class="price-gd-top">
-                                    <img src="img/r2.jpg" alt=" " class="img-responsive" />
-                                    <h4>Habitación Doble</h4>
-                                </div>
-                                <div class="price-gd-bottom">
-                                    <div class="price-list">
-                                        <ul>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-selet">
-                                        <h3><span>$</span>110.000</h3>
-                                        <a href="Login.html">Reservar ahora</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 price-grid lost">
-                            <div class="price-block agile">
-                                <div class="price-gd-top">
-                                    <img src="img/r3.jpg" alt=" " class="img-responsive" />
-                                    <h4>Habitación Simple</h4>
-                                </div>
-                                <div class="price-gd-bottom">
-                                    <div class="price-list">
-                                        <ul>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-selet">
-                                        <h3><span>$</span>64.990</h3>
-                                        <a href="Login.html">Reservar ahora</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 price-grid wthree lost">
-                            <div class="price-block agile">
-                                <div class="price-gd-top ">
-                                    <img src="img/r4.jpg" alt=" " class="img-responsive" />
-                                    <h4>Habitación Doble</h4>
-                                </div>
-                                <div class="price-gd-bottom">
-                                    <div class="price-list">
-                                        <ul>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-selet">
-                                        <h3><span>$</span> 110.000</h3>
-                                        <a href="Login.html">Reservar ahora</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
-
-
-
 </body>
 
+<script>
+$(document).ready(function() {
+
+function showPopup() {
+    $('.pop-up').addClass('show');
+    $('.pop-up-wrap').addClass('show');
+}
+
+$("#close").click(function() {
+    $('.pop-up').removeClass('show');
+    $('.pop-up-wrap').removeClass('show');
+});
+
+$(".btn-abrir").click(showPopup);
+});
+</script>
 </html>

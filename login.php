@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,18 +59,17 @@
 
                     <div class="input-contenedor">
                         <i class="fas fa-envelope icon"></i>
-                        <input type="text" placeholder="Correo Electronico" name="uname" id="uname">
+                        <input type="text" placeholder="Correo Electronico" name="uname" id="uname" required>
 
                     </div>
 
                     <div class="input-contenedor">
                         <i class="fas fa-key icon"></i>
-                        <input type="password" placeholder="Contraseña" name="psw" id="psw">
+                        <input type="password" placeholder="Contraseña" name="psw" id="psw" required>
 
 
                     </div>
                     <input type="submit" value="Ingresar" class="button">
-                    <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
                     <p>¿No tienes una cuenta? <a class="link" href="pages/cliente/registro.php">Registrate </a></p>
                     <a href="login_Empresa.php">Login Empresa</a>
                     <br><br>
@@ -79,6 +79,16 @@
                             <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
                         </svg>
                     </a>
+                    <?php
+                        if($_GET){
+                            $mensaje = $_GET["mensaje"];
+                            ?>
+                            <div class="men">
+                                <p style ="color:red;"><?php echo($mensaje); ?></p>
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </form>
         </div>

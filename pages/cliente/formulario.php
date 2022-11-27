@@ -1,6 +1,7 @@
 <?php
     $user = $_GET["usuario"];
     $tipo = $_GET["tipo"];
+    $monto = $_GET["reserva"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +32,12 @@
     <section>
 
     <ul class="menu">
-        <li><img class="imgwe" src="img/dona.png"></li>
-        <li><a href="inicio.php">INICIO</a></li>
-        <li><a href="servicios.php">SERVICIOS</a></li>
-        <li><a href="registro.php">REGISTRARSE</a></li>
-        <li><a href="contacto.php">CONTACTO</a></li>
-        <li><a href="clientes.php">NOSOTROS</a></li>
-        <li><img class="imgabe" src="img/dona.png"></li>
-    </ul>
+            <li><img class="imgwe" src="img/dona.png"></li>
+            <li><a href="servicios.php?usuario=<?php echo($user); ?>">SERVICIOS</a></li>
+            <li><a href="consultarReserva.php?usuario=<?php echo($user); ?>">CONSULTAR RESERVA</a></li>
+            <li><a href="../../index.php">SALIR</a></li>
+            <li><img class="imgabe" src="img/dona.png"></li>
+        </ul>
 
     </section>
 
@@ -150,14 +149,14 @@
                             <div class="form-group">
                                 <label for="number" class="col-sm-2 control-label">Fecha de registro</label>
                                 <div class="col-sm-10">
-                                    <input type="date" min="2022-10-25" id="checkin" name="checkin" class="gui-input" placeholder="mm/dd/yyyy" required>
+                                    <input type="date" id="checkin" name="checkin" class="gui-input" placeholder="mm/dd/yyyy" min="<?php echo(date("Y").'-'.date("m").'-'.date("d")); ?>" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="number" class="col-sm-2 control-label">Fecha de salida</label>
                                 <div class="col-sm-10">
-                                    <input type="date" min="2022-10-25" id="checkout" name="checkout" class="gui-input" placeholder="mm/dd/yyyy" required>
+                                    <input type="date"  id="checkout" name="checkout" class="gui-input" placeholder="mm/dd/yyyy" required >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -181,6 +180,7 @@
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <input type="hidden" name="user" value="<?php echo($user); ?>">
                                     <input type="hidden" name="tipo" value="<?php echo($tipo); ?>">
+                                    <input type="hidden" name="monto" value="<?php echo($monto); ?>">
                                     <input type="submit" class="btn btn-primary" value="Enviar" />
                                 </div>
 
@@ -193,8 +193,16 @@
         </div>
     </div>
 
-
-
+    
 </body>
-
+    <script>
+        const prmFecha = document.querySelector("#checkin");
+        
+        prmFecha.addEventListener('change', (event) => {
+            const sdaFecha = document.querySelector("#checkout");
+            const dato = event.target.value;
+            console.log(dato);
+            sdaFecha.setAttribute("min", dato);
+        });
+    </script>
 </html>

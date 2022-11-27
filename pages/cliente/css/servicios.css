@@ -187,9 +187,6 @@
     border-right: 1px solid rgb(185, 67, 20);
 }
 
-.card-stats.card2 {
-    
-}
 
 
 /*card3*/
@@ -208,9 +205,6 @@
     border-right: 1px solid rgb(14, 122, 50);
 }
 
-.card-stats.card3 {
-    
-}
 
 /*INPUTS CARDS*/
 #reservaIndividual{
@@ -256,4 +250,80 @@
 #verHorario:hover{
     transform: scale(1.15);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+#consultarComedor{
+    width: 90%;
+    margin: auto;
+    margin-top: 3%;
+    border: none;
+    box-shadow: 1px 1px 30px black;
+    border-radius: 25px;
+}
+#consultarComedor::backdrop{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.minuta{
+    font-size:small;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 10px;
+}
+.cabecera{
+    background-color: rgb(101, 116, 61);
+}
+
+.cabecera td{
+    color: white;
+    padding-left: 1%;
+    padding-right: 2%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.Contenido td{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#first{
+    background-color:  rgba(101, 116, 61,0.3);
+}
+
+.horarios{
+    border: 1px solid black;
+    width: 40%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    box-shadow:1px 1px 30px black;
+    background-color:  rgba(101, 116, 61,0.3);
+}
+
+.comida{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    background-color:  transparent;
+}
+
+#cerrar{
+    background-color:rgb(101, 116, 61);
+    width: 200px;
+    font-size: large;
+    color:white;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+#cerrar:hover{
+    background-color:rgb(39, 44, 24);
+    
 }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +26,13 @@
 <body>
 
     <div class="banner">
-            <form class="formulario" id="signupForm" method ="post" action ="php/valLoginEmp.php">
+            <form class="formulario" id="signupForm" method ="post" action ="php/valLoginAdmin.php">
                 <h1>Login Administrador</h1>
                 <div class="contenedor">
 
                     <div class="input-contenedor">
                         <i class="fas fa-envelope icon"></i>
-                        <input type="text" placeholder="Rut" name="uname" id="uname">
+                        <input type="text" placeholder="Rut" name="uname" id="uname" maxlength="9">
 
                     </div>
 
@@ -42,6 +43,16 @@
 
                     </div>
                     <input type="submit" value="Ingresar" class="button" id ="ingresar" name ="ingresar">
+                    <?php
+                        if($_GET){
+                            $mensaje = $_GET["mensaje"];
+                            ?>
+                            <div class="men">
+                                <p style ="color:red;"><?php echo($mensaje); ?></p>
+                            </div>
+                            <?php
+                        }
+                    ?>
                 </div>
             </form>
     </div>

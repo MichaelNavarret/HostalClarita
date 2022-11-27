@@ -45,7 +45,7 @@
         <div class ="mainContainer">
             <section id ="informacion">
                 <h2 class ="titulo" >Prueba de portales</h2>
-                <iframe src="../../login_Empresa.php" frameborder="0" width="750" height="700"></iframe>
+                <iframe src="../../login_Empresa.php" frameborder="0" width="1600" height="700"></iframe>
             </section>
         </div>
 

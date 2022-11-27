@@ -6,6 +6,7 @@
     $termino = $_POST["checkout"];
     $usuario = $_POST["user"];
     $recibo = $_POST["recibo"];
+    $monto = $_POST["monto"];
     $obtenerRut = " SELECT rutEmpresa RUT
                     FROM Empresa
                     WHERE correo = '$usuario';";
@@ -71,7 +72,7 @@
         sqlsrv_query($conn, $asignarHuespedes);
         $estadoReserva = "INSERT INTO EstadoReserva (idEstado, idReserva) VALUES (5, $idRe);";
         sqlsrv_query($conn, $estadoReserva);
-       header("Location: ../pagos.php?reserva=$idRe&tipo=$tipo&usuario=$usuario&recibo=$recibo");
+       header("Location: ../pagos.php?reserva=$idRe&tipo=$tipo&usuario=$usuario&recibo=$recibo&monto=$monto");
     }
     
     /*
