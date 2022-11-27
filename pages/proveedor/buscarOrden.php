@@ -1,6 +1,7 @@
 <!--DESARROLLADO POR MICHAEL NAVARRETE-->
 <?php
     include('../../php/connection.php');
+    $rutLog = $_GET["rutProveedor"];
 ?>
 
 <!DOCTYPE html>
@@ -20,25 +21,25 @@
     <div id ="container">
 <!--/////////////////////////////////////////////-MENU-/////////////////////////////////////////////////////////  -->
         <nav id="menu">
-                <ul id ="ul01" >
-                    <li><a href="portalProveedores.php">Inicio</a> </li>
-                    <li>
-                        <a href="#"> Orden de compra </a>
-                        <ul>
-                            <li><a href="listarOrdenes.php">Listar ordenes</a></li>                         
-                        </ul>
-                    </li>
-                    <li>
-                    <a href="#"> Inventario </a>
-                        <ul>
-                            <li><a href="listarProductos.php">Listar productos</a></li>
-                            <li><a href="adminProductos.php">Agregar producto</a></li>                           
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li><a id ="salir" href="#">Salir</a> </li>
-                </ul>
+            <ul id ="ul01" >
+                <li><a href="portalProveedores.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Inicio</a> </li>
+                <li>
+                    <a href="#"> Orden de compra </a>
+                    <ul>
+                        <li><a href="listarOrdenes.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar ordenes</a></li>                         
+                    </ul>
+                </li>
+                <li>
+                <a href="#"> Inventario </a>
+                    <ul>
+                        <li><a href="listarProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar Productos</a></li>
+                        <li><a href="adminProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Agregar Producto</a></li>                           
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li><a id ="salir" href="../../index.php">Salir</a> </li>
+            </ul>
         </nav>
         <div class="clearFix"></div>
 
@@ -46,62 +47,29 @@
             <h2>Buscar Orden</h2>
         </div>
         <div class="clearFix"></div>
-   
-<!--/////////////////////////////////////////////-BARRA FILTROS-//////////////////////////////////////////////////  -->
-        <div class ="buscador">
-            <form action="" method ="post" id ="buscador" name="buscador">
-                <div class="campo">
-                    <label for="">ID Producto: </label>
-                    <input type="number" min="1" name ="idNum" id="idNum">
-                </div>
-                <div class ="campo">
-                    <input type="submit" value="Buscar" name="btn" id="btn"  >
-                </div>
-            </form>
-        </div>
+        <br>
 <!--/////////////////////////////////////////////-TABLA DETALLE PRODUCTO-/////////////////////////////////////////////////////////  -->
         <div class="infoPedido">
             <?php
-                $codigo = $_GET['codigo'];
-                if(isset($_POST['btn'])){
-                    $id = $_POST["idNum"];
-                    $consultaInfo = "SELECT	OPP.idOrdenPedido ORDEN,
-                                            OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat OPERADOR,
-                                            CONVERT(VARCHAR, OP.fechaGenOrden, 111) FECHA,
-                                            OP.detalle DETALLE,
-                                            OP.estado ESTADO 
-                                    FROM OrdenPedido_Producto AS OPP
-                                    JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
-                                    JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
-                                    JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
-                                    WHERE OPP.idOrdenPedido = $id AND PR.rutProveedor = '128723132'
-                                    GROUP BY	OPP.idOrdenPedido ,
-                                                OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat ,
-                                                CONVERT(VARCHAR, OP.fechaGenOrden, 111) ,
-                                                OP.detalle ,
-                                                OP.estado ;";
-                    $ejecutar = sqlsrv_query($conn, $consultaInfo);
-                    $i=0;
-                    
-                }else{
-                    $consultaInfo = "SELECT	OPP.idOrdenPedido ORDEN,
-                                            OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat OPERADOR,
-                                            CONVERT(VARCHAR, OP.fechaGenOrden, 111) FECHA,
-                                            OP.detalle DETALLE,
-                                            OP.estado ESTADO
-                                    FROM OrdenPedido_Producto AS OPP
-                                    JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
-                                    JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
-                                    JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
-                                    WHERE OPP.idOrdenPedido = $codigo AND PR.rutProveedor = '128723132'
-                                    GROUP BY	OPP.idOrdenPedido ,
-                                                OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat ,
-                                                CONVERT(VARCHAR, OP.fechaGenOrden, 111) ,
-                                                OP.detalle ,
-                                                OP.estado ;";
-                    $ejecutar = sqlsrv_query($conn, $consultaInfo);
-                    $i=0;
-                }
+                $idOrden = $_GET['codigo'];
+                $consultaInfo = "SELECT	OPP.idOrdenPedido ORDEN,
+                                        OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat OPERADOR,
+                                        CONVERT(VARCHAR, OP.fechaGenOrden, 111) FECHA,
+                                        OP.detalle DETALLE,
+                                        OP.estado ESTADO
+                                FROM OrdenPedido_Producto AS OPP
+                                JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
+                                JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
+                                JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
+                                WHERE OPP.idOrdenPedido = $idOrden AND PR.rutProveedor = '$rutLog'
+                                GROUP BY	OPP.idOrdenPedido ,
+                                            OH.nombre + ' ' + OH.apellidoPat + ' ' + OH.apellidoMat ,
+                                            CONVERT(VARCHAR, OP.fechaGenOrden, 111) ,
+                                            OP.detalle ,
+                                            OP.estado ;";
+                $ejecutar = sqlsrv_query($conn, $consultaInfo);
+                $i=0;
+            
                 while($info=sqlsrv_fetch_array($ejecutar)){
                     $codigo = $info['ORDEN'];
                     $operador = $info['OPERADOR'];
@@ -145,7 +113,7 @@
                                             JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
                                             JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
                                             JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
-                                            WHERE OPP.idOrdenPedido = $id AND PR.rutProveedor = '128723132';";
+                                            WHERE OPP.idOrdenPedido = $id AND PR.rutProveedor = '$rutLog';";
                     $ejecutar = sqlsrv_query($conn, $consultaProductos);
                     $i=0;
                     while($info=sqlsrv_fetch_array($ejecutar)){
@@ -189,7 +157,7 @@
                                             JOIN OrdenPedido AS OP ON OPP.idOrdenPedido = OP.idOrdenPedido
                                             JOIN OperadorHostal AS OH ON OP.rutOperador = OH.rutOperador
                                             JOIN Producto AS PR ON OPP.idProducto = PR.idProducto
-                                            WHERE OPP.idOrdenPedido = $id AND PR.rutProveedor = '128723132';";
+                                            WHERE OPP.idOrdenPedido = $id AND PR.rutProveedor = '$rutLog';";
                     $ejecutar = sqlsrv_query($conn, $consultaProductos);
                     $i=0;
                     while($info=sqlsrv_fetch_array($ejecutar)){
@@ -213,6 +181,15 @@
             }
             ?>
             </table>
+            <?php
+                if($estado == 'Pendiente'){
+                    ?>
+                        <div class="btnAceptar">
+                            <a id="btnAceptar" href="descontarStock.php?idOrden=<?php echo($idOrden); ?>&rutProveedor=<?php echo($rutLog); ?>">Aceptar Orden</a>
+                        </div>
+                    <?php
+                }
+            ?>
         </div>
     </div>
 <!--/////////////////////////////////////////////-FOOTER-/////////////////////////////////////////////////////////  -->

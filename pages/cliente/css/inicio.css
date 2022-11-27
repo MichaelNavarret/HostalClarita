@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 480vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+
+#slideImg {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    width: 100%;
+    height: 140vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    position: absolute;
+    top: 0;
+}
+
+body {
+    font-family: arial, helvetica;
+    background-size: 100%;
+    color: #000000;
+    text-align: center;
+}
+
+.imgwe {
+    width: 4vw;
+    height: 4vw;
+}
+
+.imgabe {
+    width: 4vw;
+    height: 4vw;
+}
+
+.menu {
+    list-style: none;
+    padding: 0.1vw;
+    background: #ffffff;
+    margin: auto;
+    font-size: 1vw;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #000000;
+    padding: 2.13vw;
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a:hover {
+    background: #9494941e;
+}
+
+
+/*-- banner-bottom --*/
+
+.banner-bottom {
+    text-align: center;
+}
+
+.agileits_banner_bottom {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.banner-bottom h3 {
+    font-size: 1em;
+    color: #ffce14;
+    line-height: 2.3em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.banner-bottom h3 span {
+    display: block;
+    font-size: 25px!important;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.banner-bottom h3 i {
+    font-weight: 300;
+}
+
+.w3ls_banner_bottom_grids {
+    margin: 3em 0 0;
+}
+
+.w3l_banner_bottom_grid {
+    padding: 2em;
+    text-align: center;
+    border: 2px solid #999;
+}
+
+
+/* grid item */
+
+.cbp-ig-grid li {
+    width: 25%;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #cfdbf3;
+}
+
+.cbp-ig-grid li:last-child {
+    border-right: 1px solid #cfdbf3;
+}
+
+.w3_grid_effect {
+    padding: 2em;
+    background: rgba(185, 185, 185, 0.342);
+}
+
+
+/* the icon with pseudo class for icon font */
+
+.cbp-ig-icon {
+    padding: 1.5em 0 0;
+    display: block;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.cbp-ig-icon:before {
+    font-family: FontAwesome;
+    font-size: 5em;
+    speak: none;
+    color: #0f2453;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.w3_road:before {
+    content: "\f236";
+}
+
+.w3_cube:before {
+    content: "\f1ad";
+}
+
+.w3_users:before {
+    content: "\f0f4";
+}
+
+.w3_ticket:before {
+    content: "\f1eb";
+}
+
+
+/* title element */
+
+
+/* Hover styles */
+
+.cbp-ig-grid .cbp-ig-title {
+    margin: 20px 0 10px 0;
+    padding: 20px 0 0 0;
+    font-size: 1em;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    transition: transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+
+.cbp-ig-grid .cbp-ig-title:before {
+    content: '';
+    position: absolute;
+    background: #ffce14;
+    width: 160px;
+    height: 6px;
+    top: 0px;
+    left: 50%;
+    margin: -10px 0 0 -80px;
+    -webkit-transition: margin-top 0.2s;
+    /* top or translate does not seem to work in Firefox */
+    -moz-transition: margin-top 0.2s;
+    transition: margin-top 0.2s;
+}
+
+.cbp-ig-grid .cbp-ig-category {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #ffce14;
+    -webkit-transform: translateY(10px);
+    -moz-transform: -moz-translateY(10px);
+    -ms-transform: -ms-translateY(10px);
+    transform: translateY(10px);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    -webkit-transition: transform 0.3s, opacity 0.2s;
+}
+
+.cbp-ig-grid li:hover .cbp-ig-category,
+.touch .cbp-ig-grid li .cbp-ig-category {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+
+/* Hover styles */
+
+
+/*-- //banner-bottom --*/
+
+.cbp-ig-grid li>.w3_grid_effect:hover {
+    background: #0f2453;
+}
+
+.cbp-ig-grid li>.w3_grid_effect:hover .cbp-ig-icon {
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+}
+
+.cbp-ig-grid li>.w3_grid_effect:hover .cbp-ig-icon:before {
+    color: #ffce14;
+}
+
+.cbp-ig-grid li>.w3_grid_effect:hover .cbp-ig-title {
+    color: #fff;
+}
+
+.cbp-ig-grid li>.w3_grid_effect:hover .cbp-ig-title {
+    -webkit-transform: translateY(-45px);
+    -moz-transform: translateY(-45px);
+    -ms-transform: translateY(-45px);
+    transform: translateY(-45px);
+}
+
+.cbp-ig-grid li>.w3_grid_effect:hover .cbp-ig-title:before {
+    background: #fff;
+    margin-top: 68px;
+}
+
+@media screen and (max-width: 62.75em) {
+    .cbp-ig-grid li {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 25em) {
+    .cbp-ig-grid {
+        font-size: 80%;
+    }
+}
+
+
+/*-- //banner-bottom --*/
+
+
+/*--main--*/
+
+.contact-w3ls,
+.advantages,
+.banner-bottom,
+.w3l-visitors-agile,
+.plans-section,
+.team {
+    padding: 100px 0px;
+}
+
+h3.title-w3-agileits {
+    font-size: 3em;
+    color: #FFF;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 1em;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Oswald', sans-serif;
+}
+
+.title-black-wthree {
+    color: #0f2453!important;
+}
+
+
+/*--//main--*/
+
+
+/*-- acerca de--*/
+
+.about-wthree {
+    padding: 5em 0 22.6em 0px;
+    background: #eceef2;
+}
+
+.ab-w3l-spa {
+    text-align: center;
+    position: relative;
+}
+
+.w3l-slider-img {
+    border: 10px solid rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 2em;
+    top: 29em;
+}
+
+.w3ls-info-about {
+    position: absolute;
+    left: 46%;
+    z-index: 99;
+    padding: 2em 4.5em;
+    top: 107%;
+    border: 10px solid #000;
+}
+
+.w3ls-info-about h4 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    color: #ffce14;
+    /* margin-bottom: 11px; */
+    line-height: 1.4em;
+    text-transform: capitalize;
+    background: #0f2453;
+    padding: 10px 15px;
+}
+
+.w3ls-info-about p {
+    /* margin: 0em 0 2em 0; */
+    color: #ffffff;
+    line-height: 2.2em;
+    background: rgba(0, 0, 0, 0.85);
+    font-size: 0.9em;
+    letter-spacing: 2px;
+}
+
+p.about-para-w3ls {
+    color: #777;
+    font-size: 16px;
+    line-height: 33px;
+    letter-spacing: 0.5px;
+    margin-bottom: 2em;
+}
+
+
+/*-- acerca de--*/
+
+
+/*--servicios--*/
+
+.advantages {
+    background: url(../img/services.jpg)no-repeat;
+    min-height: 350px;
+    background-size: cover;
+}
+
+.advantage-block {
+    padding: 2em 2em;
+    background: rgba(0, 0, 0, 0.52);
+    text-align: center;
+}
+
+.advantage-block:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+
+.advantage-block h4 {
+    font-size: 1.5em;
+    color: #fff;
+    margin: 0.5em 0em 0.5em 0em;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.advantage-block p {
+    font-size: 16px;
+    color: #FFF;
+    /* line-height: 1.8em; */
+    text-align: left;
+    padding-left: 3em;
+    line-height: 35px;
+    letter-spacing: .8px;
+}
+
+.advantage-grid {
+    padding: 0;
+}
+
+.left-w3ls {
+    border-right: 1px solid #b1b1b1;
+}
+
+.advantage-block .fa-credit-card,
+.advantage-block .fa-clock-o {
+    color: #ffce14;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.advantage-block p i {
+    color: #ffce14;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+
+/*--servicios--*/
+
+
+/*--habitacion y precio --*/
+
+.price-list ul {
+    padding: 0px;
+    list-style: none;
+}
+
+.price-gd-top {
+    text-align: center;
+    position: relative;
+}
+
+.price-gd-top h4 {
+    font-size: 1.5em;
+    color: #fff;
+    padding: 0.4em 1em;
+    background: #0f2453;
+    font-weight: 300;
+    position: absolute;
+    top: 9.6em;
+    right: 0em;
+}
+
+.price-selet h3 {
+    padding: 0.2em 0em 0em 0em;
+    font-size: 1.7em;
+    float: left;
+    margin-left: 20px;
+}
+
+.price-selet h3 span {
+    color: #ef0404;
+    font-size: 31px;
+    margin-right: 5px;
+}
+
+.price-gd-bottom {
+    background: #fff;
+    text-align: center;
+    padding: 1.8em 0em 1em;
+}
+
+.price-gd-top img {
+    width: 100%;
+}
+
+.price-list ul li {
+    padding: 0.5em 0em;
+    font-size: 0.9em;
+    color: #2b2b2b;
+    display: inline-block;
+}
+
+.price-selet {
+    padding: 1em 0em;
+    text-align: center;
+    background: #fff;
+}
+
+.price-selet a {
+    font-size: 1.1em;
+    color: #fff;
+    display: block;
+}
+
+.price-selet a {
+    font-size: 0.9em;
+    color: #000000;
+    display: inline-block;
+    padding: 0.5em 2em;
+    background: #ffce14;
+    text-decoration: none;
+    border: 2px solid #ecbf11;
+}
+
+.price-block {
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.15);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+
+.price-block:hover,
+.w3layouts-pricing:hover,
+.w3-agileits-vpn-grid:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    z-index: 1;
+}
+
+
+/*--habitacion y precio --*/

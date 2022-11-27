@@ -39,29 +39,19 @@ function editarProducto(){
 
 /*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL OPERADOR/PROVEEDORES*/
 
-function generarOrden(){
-    document.getElementById('ordenCompra').style.display = 'block';
+function cerrarMensaje(){
+    document.getElementById('mensaje').style.display = 'none';
 }
 
-function recepcionarOrden(){
-    console.log('Probando Conexiones');
-    window.location.href='recepcion.html';
-}
+/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL GENERAR RESERVA LOCAL*/
+const btnAbrirModal = document.querySelector("#generarReserva");
+const btncerrarModal = document.querySelector("#cerrar");
+const modal = document.querySelector("#ingresarReserva");
 
+btnAbrirModal.addEventListener("click", ()=>{
+    modal.showModal();
+});
 
-/*----------------------------------------------------------------------------------------------------------------------------SCRIPTS PORTAL INFORMES*/
-
-function download(){
-    document.getElementById('alerta').style.display = 'block';
-    var informe = document.getElementById('informe-name').value;
-    if (informe == "01") {
-        document.getElementById('infoDown').innerHTML = 'El informe de Registro de ventas será descargado a la brevedad.';
-    } else if (informe == "02") {
-        console.log("Entrando02");
-        document.getElementById('infoDown').innerHTML = 'El informe de Registro de sesion será descargado a la brevedad.';
-    }else if (informe == "03"){
-        document.getElementById('infoDown').innerHTML = 'El informe de Registro de pedidos será descargado a la brevedad.';
-    }else{
-        document.getElementById('infoDown').innerHTML = 'El informe de Registro de visitas web será descargado a la brevedad.';
-    }
-}
+btncerrarModal.addEventListener("click", ()=>{
+    modal.close();
+});

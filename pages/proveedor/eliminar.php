@@ -5,8 +5,9 @@
 
     }
     $codigo = $_GET['codigo'];
+    $rutLog = $_GET["rutProveedor"];
     $consulta = "   DELETE FROM Producto
-                    WHERE idProducto = '$codigo';";
+                    WHERE codigo = '$codigo';";
     $ejecutar = sqlsrv_query($conn, $consulta);
-    header("Location: listarProductos.php");
+    header("Location: listarProductos.php?rutProveedor=$rutLog");
 ?>

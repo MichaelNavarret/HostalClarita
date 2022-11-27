@@ -1,6 +1,7 @@
 <!--DESARROLLADO POR MICHAEL NAVARRETE-->
 <?php
     include('../../php/connection.php');
+    $rutLog = $_GET["rutProveedor"];
 ?>
 
 <!DOCTYPE html>
@@ -21,23 +22,23 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// MENU -->
         <nav id="menu">
             <ul id ="ul01" >
-                <li><a href="portalProveedores.php">Inicio</a> </li>
+                <li><a href="portalProveedores.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Inicio</a> </li>
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>                        
+                        <li><a href="listarOrdenes.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar ordenes</a></li>                         
                     </ul>
                 </li>
                 <li>
                 <a href="#"> Inventario </a>
                     <ul>
-                        <li><a href="listarProductos.php">Listar productos</a></li>
-                        <li><a href="adminProductos.php">Agregar producto</a></li>                           
+                        <li><a href="listarProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar Productos</a></li>
+                        <li><a href="adminProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Agregar Producto</a></li>                           
                     </ul>
                 </li>
             </ul>
             <ul>
-                <li><a id ="salir" href="#">Salir</a> </li>
+                <li><a id ="salir" href="../../index.php">Salir</a> </li>
             </ul>
         </nav>
         <div class="clearFix"></div>
@@ -84,6 +85,13 @@
                                 <input class ="datoCampoContent" type="number" name="stockPro" id="stockPro" min = 1 required>
                             </div>    
                         </li>
+                        <li>
+                            <div class ="datoCampo" >
+                                <h4 class ="datoCampoTitulo"><strong>Stock Critico</strong> </h4>
+                                <input class ="datoCampoContent" type="number" name="stockCritico" id="stockCritico" min = 1 required>
+                            </div>    
+                        </li>
+                        <input type="hidden" name="usuario" id ="usuario" value ="<?php echo($rutLog);  ?>">
                         <li>
                             <div class ="btn" id="btnAgregar" >
                                 <input type="submit" name="agregar" id="agregar" value ="Agregar Producto">

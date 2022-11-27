@@ -1,6 +1,7 @@
 <!--DESARROLLADO POR MICHAEL NAVARRETE-->
 <?php
     include('../../php/connection.php');
+    $rutLog = $_GET["rutProveedor"];
 ?>
 
 <!DOCTYPE html>
@@ -21,23 +22,23 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// MENU -->
         <nav id="menu">
             <ul id ="ul01" >
-                <li><a href="portalProveedores.php">Inicio</a> </li>
+                <li><a href="portalProveedores.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Inicio</a> </li>
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>                       
+                        <li><a href="listarOrdenes.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar ordenes</a></li>                         
                     </ul>
                 </li>
                 <li>
                 <a href="#"> Inventario </a>
                     <ul>
-                        <li><a href="listarProductos.php">Listar Productos</a></li>
-                        <li><a href="adminProductos.php">Administrar Productos</a></li>                           
+                        <li><a href="listarProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar Productos</a></li>
+                        <li><a href="adminProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Agregar Producto</a></li>                           
                     </ul>
                 </li>
             </ul>
             <ul>
-                <li><a id ="salir" href="#">Salir</a> </li>
+                <li><a id ="salir" href="../../index.php">Salir</a> </li>
             </ul>
         </nav>
         <div class="clearFix"></div>
@@ -60,6 +61,7 @@
                                         FORMAT(valor, '######') VALOR,
                                         familia FAMILIA,
                                         CONVERT(VARCHAR,fechaVencimiento,105) FECHA,
+                                        stockCritico STOCKCRITICO,
                                         stock STOCK
                                 FROM Producto
                                 WHERE codigo = '$codigo';";
@@ -71,6 +73,7 @@
                         $familia = $fila["FAMILIA"];
                         $fecha = $fila["FECHA"];
                         $stock = $fila["STOCK"];
+                        $stockCritico = $fila["STOCKCRITICO"];
                     }
                     
                 ?>
@@ -113,8 +116,15 @@
                             <input type="number" name="stockPro" id="stockPro" value ="<?php echo($stock) ?>">
                         </div>    
                     </li>
+                    <li>
+                        <div class ="datoCampo" >
+                            <h4 class ="datoCampoTitulo"><strong>STOCK CRITICO</strong> </h4>
+                            <input type="number" name="stockCritico" id="stockCritico" value ="<?php echo($stockCritico) ?>">
+                        </div>    
+                    </li>
                     <div id ="btn" >
                         <input type="hidden" name="codigoPro" value = "<?php echo($codigo) ?>">
+                        <input type="hidden" name="usuario" value = "<?php echo($rutLog) ?>">
                         <input type="submit" value="Actualizar Producto" id="update" name="update" onclick="return editarProducto()">
                     </div>
                 </ul>

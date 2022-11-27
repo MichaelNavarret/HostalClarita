@@ -1,6 +1,7 @@
 <!--DESARROLLADO POR MICHAEL NAVARRETE-->
 <?php
     include('../../php/connection.php');
+    $rutLog = $_GET["rutProveedor"];
 ?>
 
 <!DOCTYPE html>
@@ -21,23 +22,23 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////// MENU -->
         <nav id="menu">
             <ul id ="ul01" >
-                <li><a href="portalProveedores.php">Inicio</a> </li>
+                <li><a href="portalProveedores.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Inicio</a> </li>
                 <li>
                     <a href="#"> Orden de compra </a>
                     <ul>
-                        <li><a href="listarOrdenes.php">Listar ordenes</a></li>                         
+                        <li><a href="listarOrdenes.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar ordenes</a></li>                         
                     </ul>
                 </li>
                 <li>
                 <a href="#"> Inventario </a>
                     <ul>
-                        <li><a href="listarProductos.php">Listar Productos</a></li>
-                        <li><a href="adminProductos.php">Administrar Productos</a></li>                           
+                        <li><a href="listarProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Listar Productos</a></li>
+                        <li><a href="adminProductos.php?rutProveedor=<?php global $rutLog; echo($rutLog) ?>">Agregar Productos</a></li>                           
                     </ul>
                 </li>
             </ul>
             <ul>
-                <li><a id ="salir" href="#">Salir</a> </li>
+                <li><a id ="salir" href="../../index.php">Salir</a> </li>
             </ul>
         </nav>
         <div class="clearFix"></div>
@@ -53,13 +54,14 @@
                 <h2 class ="titulo" >Información Personal</h2>
 
                 <?php
+                    global $rutLog;
                     $consulta = "  SELECT	P.rutProveedor RUT,
                                             P.direccion DIRECCION,
                                             P.nombre NOMBRE,
                                             R.nombre RUBRO
                                     FROM Proveedor AS P
                                     JOIN Rubro AS R ON P.idRubro = R.idRubro
-                                    WHERE P.rutProveedor = '128723132';";
+                                    WHERE P.rutProveedor = '$rutLog';";
                     $ejecutar = sqlsrv_query($conn, $consulta);
                     $i = 0;
                     while($fila = sqlsrv_fetch_array($ejecutar)){
@@ -125,11 +127,12 @@
                 </form>
                 <?php
                     include('../../php/connection.php');
+                    global $rutLog;
                     if(isset($_POST['btnUpdate'])){
                         $oldPass = $_POST["oldPass"];
                         $newPass = $_POST["newPass1"];
                         $newPass2 = $_POST["newPass2"];
-                        $consulta = " SELECT clave Clave  FROM Usuario WHERE rutUsuario = '128723132';";
+                        $consulta = " SELECT clave Clave  FROM Usuario WHERE rutUsuario = '$rutLog';";
                         $ejecutar = sqlsrv_query($conn, $consulta);
                         $i=0;
                         while($fila=sqlsrv_fetch_array($ejecutar)){
@@ -140,7 +143,7 @@
                             if($newPass == $newPass2){
                                 $consulta = "   UPDATE Usuario
                                                 SET clave = '$newPass'
-                                                WHERE rutUsuario = '128723132';";
+                                                WHERE rutUsuario = '$rutLog';";
                                 $ejecutar = sqlsrv_query($conn, $consulta);
                         ?>
                             <p class ="mensaje" id="success" >Contraseña actualizada exitosamente</p>

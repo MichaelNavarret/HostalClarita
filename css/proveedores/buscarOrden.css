@@ -5,6 +5,7 @@
     text-decoration: none;
     margin: 0px;
     color:#57350F;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -213,6 +214,30 @@ body{
     font-size: large;
     line-height: 400%;
     border-bottom: 1px dashed #524231;
+}
+
+/*-----------------------------------------------------------------------------------------------BTN ACEPTAR*/
+.btnAceptar{
+    width: 15%;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    margin-top: 2%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    background-color: #D1AA7D;
+    text-align: center;
+    font-size: large;
+}
+.btnAceptar #btnAceptar{
+    width: 100%;
+    color: white;
+}
+
+.btnAceptar:hover{
+    background-color: #57350F;
+    box-shadow: 2px 2px 10px #D1AA7D;
+    cursor: pointer;
 }
 /*-----------------------------------------------------------------------------------------------FOOTER*/
 footer{

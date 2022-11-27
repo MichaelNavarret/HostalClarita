@@ -1,0 +1,322 @@
+/*-----------------------------------------------------------------------------------------------DESARROLLADO POR MICHAEL NAVARRETE */
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0px;
+    color:#0f3d57;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.clearFix{
+    float: none;
+    clear: both;
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+}
+
+/*-----------------------------------------------------------------------------------------------MENU PRINCIPAL*/
+
+#menu{
+    min-height: 40px;
+    background-color: #0f2e57;
+    width: 100%;
+}
+#menu #ul01{
+    padding: 0px;
+}
+#menu #ul01 li {
+    display: block;
+    float: left;
+    padding: 10px;
+    font-size: large;
+    border-right: 1px solid white;
+}
+
+#menu #ul01 li:hover{
+    background-color: white;
+}
+
+#menu #ul01 li:hover a{
+    color: black;
+}
+
+#menu #ul01 li a{
+    color: white;
+}
+
+#menu #ul01 li #logo{
+    width: 30px;
+    height: 25px;
+}
+
+#menu ul #salir {
+    text-decoration: none;
+    display: block;
+    float: right;
+    padding: 10px;
+    font-size: large;
+    border-left: 1px solid white;
+}
+
+#menu ul #salir:hover{
+    background-color: white;
+}
+
+#menu ul #salir:hover{
+    color: black;
+}
+
+#menu ul #salir{
+    color: white;
+}
+
+/*-----------------------------------------------------------------------------------------------SUB MENÚ*/
+
+#menu #ul01 li ul{
+    display: none;
+    position:absolute;
+    padding:0;
+    background-color: white;
+    top: 4%;
+}
+
+#menu #ul01 li ul li{
+    float:none; 
+    width: auto;
+}
+
+#menu #ul01 li ul li a{
+    margin: 0;
+    line-height:120%; 
+    padding:10px 15px;
+}
+
+#menu #ul01 li ul li:hover{
+    background-color: #bed3eb;
+    
+}
+
+#menu #ul01 li ul li:hover a{
+    margin: 0;
+    line-height:120%; 
+    padding:10px 15px;
+}
+
+#menu #ul01 li:hover ul{
+    display: block;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------BANNER*/
+
+#miniBanner{
+    background-color: #7dafd1;
+    min-height: 40px;
+}
+
+#miniBanner h2{
+    padding-top: .3%;
+    padding-left: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0f3157;
+}
+
+/*-----------------------------------------------------------------------------------------------LINEA*/
+#linea{
+    height: 40px;
+    background-color: #4F70C4;
+}
+/*-----------------------------------------------------------------------------------------------MAIN CONTAINER*/
+
+/*-----------------------------------------------------------------------------------------------INFORMACION PERSONAL*/
+#informacion{
+    display: block;
+    float: left;
+    margin: .2%;
+    margin-top: 1%;
+    margin-left: 5%;
+    width: 40%;
+    border: 1px solid #06397A;
+    height: auto;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
+    padding-bottom: 2%;
+}
+#datos{
+    text-align: center;
+}
+
+.datoCampoTitulo{
+    margin-right: 3%;
+    margin-top: 4%;
+    line-height: 200%;
+    background-color: #bebfeb ;
+    border-radius: 10px;
+}
+
+.datoCampoContent{
+    margin-right: 3%;
+    margin-top: 2%;
+    border-bottom: 1px dashed #06397A ;
+}
+
+/*-----------------------------------------------------------------------------------------------CONTRASEÑA*/
+#contraseña{
+    display: block;
+    margin: .8%;
+    margin-top: 1%;
+    float: left;
+    width: 50%;
+    border: 1px solid #06397A;
+    height:  350px;
+    box-shadow: 5px 5px #bebfeb;
+    border-radius: 10px;
+}
+
+#formPass{
+    padding-top: 1%;
+    padding-left:3% ;
+}
+.campo{
+    margin-top: 1.5%;
+}
+.campo input{
+    margin-top: 1%;
+    width: 94%;
+}
+
+#btn{
+    text-align: center;
+    width: 95%;
+    margin-top: 1.5%;
+    margin-right: 3%;
+}
+#btn input{
+    background-color: #bebfeb;
+    color: #57350F;
+    width: 100%;
+    line-height: 200%;
+    border-radius: 10px;
+    border:1px solid #304478;
+    
+
+}
+
+#btn:hover input {
+    border:1px dashed #304478;
+    background-color: #bebfeb;
+    color: white;
+    width: 100%;
+    line-height: 200%;
+    border-radius: 10px;
+    color: black;
+    cursor:pointer;
+}
+
+.mensaje{
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    line-height: 250%;
+    width: 60%;
+    color:wheat;
+    
+}
+#fail{
+    background-color: #EB607E;
+}
+#success{
+    color: black;
+    background-color: #58dddd;
+    border-radius: 10px;
+}
+
+/*-----------------------------------------------------------------------------------------------INFORMACION PERSONAL + CONTRASEÑA*/
+.titulo{
+    color: white;
+    text-align: center;
+    background-color: #304478;
+    line-height: 200%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/*-----------------------------------------------------------------------------------------------FOOTER*/
+footer{
+    text-align: center;
+    background-color: #304478;
+}
+
+.pie p{
+    margin-top: 10px;
+    color: #bebfeb;
+    font-size: x-large;
+}
+/*-----------------------------------------------------------------------------------------------------GENERADOR*/
+#generador{
+    margin: auto;
+    margin-top: 2%;
+    width: 40%;
+    border: 1px solid #06397A;
+    height: auto;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
+    padding-bottom: 2%;
+}
+#datos{
+    text-align: center;
+}
+
+.datoCampoTitulo{
+    margin-right: 3%;
+    margin-top: 4%;
+    line-height: 200%;
+    background-color: #bebfeb ;
+    border-radius: 10px;
+}
+
+.datoCampoContentBtn{
+    margin: auto;
+    margin-top: 2%;
+    background-color: #7dafd1;
+    width: 15%;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 10px;
+}
+.datoCampoContentBtn a{
+    color: white;
+}
+
+.datoCampoContentBtn:hover{
+    margin: auto;
+    margin-top: 2%;
+    background-color: #3c5464;
+    width: 15%;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 10px;
+}
+
+/*--------------------------------------------------------------------------------Mensajes*/
+.mainContainerMensajes{
+    display: block;
+    float: left;
+    margin-left: 2%;
+    width: 45%;
+}
+#mensajes{
+    margin-top: 2%;
+    border: 1px solid #06397A;
+    height: auto;
+    box-shadow: 5px 5px #cecece;
+    border-radius: 10px;
+    padding-bottom: 2%;
+}
